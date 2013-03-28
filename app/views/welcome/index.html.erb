@@ -1,4 +1,5 @@
-	<div id="articles" class="row-fluid clearfix">
+<div class="row articles">	
+	<div id="articles" class="clearfix block">
 			<%= image_tag 'toomanylines.png' %>
 			<% if false %>
 			<h1>Words, Numbers, Images</h1>	
@@ -9,29 +10,33 @@
 				textbody textbody textbody textbody textbody text
 			</p>
 	</div>
+</div>
 
-	<div id="services" class="row-fluid clearfix service">
-			<h1>Services</h1>
-			<div class="span3" style="margin: 0;">
+<div class="row service">
+	<div id="services" class="clearfix block">
+			<h1 class="text-center">Services</h1>
+			<div class="span3 text-center" style="margin: 0;">
 				<div class="ball red"><i class="icon-thumbs-up"></i></div>
 				<div class="lead">Contextual Web</div>
 			</div>
-			<div class="span3">
+			<div class="span3 text-center">
 				<div class="ball green"><i class="icon-question-sign"></i></div>
 				<div class="lead">Questions and Answers</div>
 			</div>
-			<div class="span3">
+			<div class="span3 text-center">
 				<div class="ball pink"><i class="icon-flag"></i></div>
 				<div class="lead">Y-gen talent Aquisition</div>
 			</div>
-			<div class="span3">
+			<div class="span3 text-center">
 				<div class="ball blue"><i class="icon-trophy"></i></div>
 				<div class="lead">Y-gen talent Management</div>
 			</div>
 	</div>
+</div>
 
-	<div id="about" class="row-fluid clearfix">
-			<h1>About</h1>
+<div class="row about">
+	<div id="about" class="clearfix block">
+			<h1 class="text-center">About</h1>
 			<div class="span5">
 				<div class="lead">Nikolai Skievaski</div>
 				<p>body text body textbody textbody textbody 
@@ -48,19 +53,10 @@
 			</div>
 	</div>
 </div>
-<div class="container-fluid">
-	<div id="work" class="row-fluid clearfix">
-			<h1>Work</h1>
-			<div class="span4" style="margin-left:10px">
-				<%= image_tag 'http://fbiz.firstbusiness.com/qa-theme/FBB/images/VaultLoginHeader_background.jpg' %>
-			</div>
-			<div class="span4">
-				<%= image_tag 'http://fbiz.firstbusiness.com/qa-theme/FBB/images/VaultLoginHeader_background.jpg' %>
-			</div>
-			<div class="span4">
-				<%= image_tag 'http://fbiz.firstbusiness.com/qa-theme/FBB/images/VaultLoginHeader_background.jpg' %>
-			</div>
 
+<div class="row">
+	<div id="work" class="clearfix block">
+			<h1 class="text-center">Work</h1>
 			<div class="span4" style="margin-left:10px">
 				<%= image_tag 'http://fbiz.firstbusiness.com/qa-theme/FBB/images/VaultLoginHeader_background.jpg' %>
 			</div>
@@ -81,9 +77,10 @@
 				<%= image_tag 'http://fbiz.firstbusiness.com/qa-theme/FBB/images/VaultLoginHeader_background.jpg' %>
 			</div>
 	</div>
-
-	<div id="contact_us" class="row-fluid">
-		<h1>Contact us</h1>
+</div>
+<div class="row contact_us">
+	<div id="contact_us" class="clearfix block">
+		<h1 class="text-center">Contact us</h1>
 		<%= form_for @email_subscription do |f| %>
 		  <% if @email_subscription.errors.any? %>
 		    <div id="error_explanation">
@@ -102,3 +99,4 @@
 			<%= f.submit "Signup" %>
 		<% end %>
 	</div>
+</div>

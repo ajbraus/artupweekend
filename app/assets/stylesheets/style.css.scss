@@ -4,9 +4,13 @@ body {
 }
 
 .header {
-	height:74px;
 	background-color: white;
 	width:100%;
+	z-index: 1;
+}
+
+.nav {
+	text-align: right;
 }
 
 .container-fluid {
@@ -18,10 +22,6 @@ h1 {
 	line-height: 1;
 }
 
-.row-fluid {
-	min-height: 360px;
-}
-
 .row-fluid .span12 {
 	margin:0;
 }
@@ -30,6 +30,10 @@ h1 {
 	img {
 		margin: 0 auto;
 	}
+}
+
+.row {
+
 }
 
 .wni_row {
@@ -55,23 +59,49 @@ font-size: 49px;
 padding: 50px;
 height: 50px;
 text-align: center;
+width: 50px;
 }
 .red {
-	background-color: red;
-}
-.green {
-	background-color:rgb(0, 173, 255);
-}
-.pink {
-	background-color: rgb(204, 0, 255);
-}
-.blue {
-	background-color: rgb(0, 20, 255);
+  background-color:rgb(219, 219, 219);
+	&:hover{
+		background-color: red;
+		-webkit-transition: background-color .25s linear .1s;
+		transition: background-color .25s linear .1s;
+	}
 }
 
-#articles {
-	position: relative;
-bottom: 80px;
+.green {
+	background-color:rgb(219, 219, 219);
+	&:hover{
+		background-color:rgb(0, 173, 255);
+		-webkit-transition: background-color .25s linear .1s;
+		transition: background-color .25s linear .1s;
+	}
+}
+.pink {
+	background-color:rgb(219, 219, 219);
+	&:hover{
+		background-color: rgb(204, 0, 255);
+		-webkit-transition: background-color .25s linear .1s;
+		transition: background-color .25s linear .1s;
+	}
+}
+.blue {
+	background-color:rgb(219, 219, 219);
+	&:hover{
+		background-color: rgb(0, 20, 255);
+		-webkit-transition: background-color .25s linear .1s;
+		transition: background-color .25s linear .1s;
+	}
+}
+
+.articles {
+}
+
+.block {
+	width: 640px;
+margin: 0 auto;
+min-height: 350px;
 }
 
 #work {
@@ -81,10 +111,10 @@ bottom: 80px;
 	}
 }
 
-#about {
+.about {
 	background:url('lined_paper.png');
 }
 
-#contact_us {
+.contact_us {
 	background:url('graphy.png');
 }
