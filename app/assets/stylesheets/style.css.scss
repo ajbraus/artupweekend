@@ -17,6 +17,10 @@ body {
 	padding:0;
 }
 
+.navbar-inner {
+	width: 100%;
+}
+
 h1 {
 	font-size:80px;
 	line-height: 1;
@@ -113,8 +117,79 @@ min-height: 350px;
 
 .about {
 	background:url('lined_paper.png');
+	margin-top: 40px;
 }
 
 .contact_us {
 	background:url('graphy.png');
+	height: 710px;
+}
+
+.navbar-inverse .nav > li > a.blog-link {
+	color:rgb(252, 183, 99);
+}
+
+.navbar .nav {
+	float: right;
+margin: 0 35px 0 0;
+}
+
+.navbar {
+	height: 44px;
+}
+.navbar-inner {
+	border-radius: 0;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+
+.logo {
+	width: 70px;
+float: left;
+margin-top: 2px;
+}
+.four-lines {
+width: 525px;
+margin-left: 62px;
+position: relative;
+bottom: 280px;
+margin-bottom: -230px;
+z-index: -1;
+
+}
+
+.row {
+	padding-top: 40px;
+}
+
+#home {
+	padding-top: 87px;
+	h1 {
+		font-size: 106px;
+line-height: 91px;
+	}
+}
+
+footer {
+	text-align: center;
+color: white;
+background-color: #1b1b1b;
+background-image: -moz-linear-gradient(top, #222222, #111111);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+background-image: -webkit-linear-gradient(top, #222222, #111111);
+background-image: -o-linear-gradient(top, #222222, #111111);
+background-image: linear-gradient(to bottom, #222222, #111111);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+background-color: #1b1b1b;
+background-image: -moz-linear-gradient(top, #222222, #111111);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+background-image: -webkit-linear-gradient(top, #222222, #111111);
+background-image: -o-linear-gradient(top, #222222, #111111);
+background-image: linear-gradient(to bottom, #222222, #111111);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+border-color: #252525;
+height: 22px;
+padding: 22px 0;
 }

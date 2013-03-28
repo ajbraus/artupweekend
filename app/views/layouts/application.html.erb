@@ -41,26 +41,18 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="navbar navbar-inverse">
+        <div class="navbar navbar-inverse header" data-spy="affix">
           <div class="navbar-inner">
-            <div class="container">
-              <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </a>
-              <div class="nav-collapse collapse navbar-inverse-collapse">
-                <ul class="nav">
-                  <li class="active"><%= link_to "Home", "#home" %></li>
-                  <li><%= link_to "Articles", "#articles" %></li>
-                  <li><%= link_to "About Us", "#about" %></li>
-                  <li><%= link_to "Contact Us", "#contact_us" %></li>
-                </ul>
-              </div><!-- /.nav-collapse -->
-            </div>
+            <a href="#home"><%= image_tag "fourlines.png", class:"logo" %></a>
+            <ul class="nav">
+              <li><%= link_to "Services", "#services" %></li>
+              <li><%= link_to "About Us", "#about" %></li>
+              <li><%= link_to "Contact Us", "#contact_us" %></li>
+              <li><%= link_to "Blog", "#", class:"blog-link" %></li>
+            </ul>
+          </div>
         </div>
-        </div>
-        <div data-spy="scroll" data-target=".nav-pills">
+        <div data-spy="scroll" data-target=".navbar-inner">
           <%= bootstrap_flash %>
           <%= yield %>
         </div> <!-- span9 -->

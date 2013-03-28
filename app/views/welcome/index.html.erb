@@ -1,41 +1,56 @@
-<div class="row articles">	
-	<div id="articles" class="clearfix block">
-			<%= image_tag 'toomanylines.png' %>
-			<% if false %>
-			<h1>Words, Numbers, Images</h1>	
-			<% end %>
-			<div class="lead">Subtitle</div>
-			<p>body text body textbody textbody textbody 
-				textbody textbody textbody textbody textbody 
-				textbody textbody textbody textbody textbody text
-			</p>
+<div id="home" class="row home">	
+	<div class="clearfix block">
+			<h1 class="text-center">words</br>numbers<br>images</h1>
+			<%= image_tag "big_four_lines.png", class:"four-lines" %>
+			<div class="lead text-center">Business consulting for this generation</div>
 	</div>
 </div>
 
-<div class="row service">
-	<div id="services" class="clearfix block">
+<div id="services" class="row service">
+	<div class="clearfix block">
 			<h1 class="text-center">Services</h1>
-			<div class="span3 text-center" style="margin: 0;">
-				<div class="ball red"><i class="icon-thumbs-up"></i></div>
-				<div class="lead">Contextual Web</div>
+			<div class="row">
+				<div class="span6 text-center" style="margin: 0;">
+					<div class="ball red"><i class="icon-thumbs-up"></i></div>
+					<div class="lead"><strong>Contextual Web</strong></div>
+					<p>
+						Information is everywhere, but so little of it is relevant to you and your community.
+						We help you by providing web solutions for your context. 
+					</p>
+				</div>
+				<div class="span6 text-center">
+					<div class="ball green"><i class="icon-question-sign"></i></div>
+					<div class="lead"><strong>Questions and Answers</strong></div>
+					<p>
+						The context of information has changed. 
+						Is your organization stuck in your email box? 
+						Our platform will change everything.
+					</p>
+				</div>
 			</div>
-			<div class="span3 text-center">
-				<div class="ball green"><i class="icon-question-sign"></i></div>
-				<div class="lead">Questions and Answers</div>
-			</div>
-			<div class="span3 text-center">
-				<div class="ball pink"><i class="icon-flag"></i></div>
-				<div class="lead">Y-gen talent Aquisition</div>
-			</div>
-			<div class="span3 text-center">
-				<div class="ball blue"><i class="icon-trophy"></i></div>
-				<div class="lead">Y-gen talent Management</div>
+			<div class="row">
+				<div class="span6 text-center">
+					<div class="ball pink"><i class="icon-flag"></i></div>
+					<div class="lead"><strong>Corporate Intrapreneurship</strong></div>
+					<p>
+						We are a team of corporate innovators gone rouge. 
+						Let us teach you management techniques to benefit from your team's and customers' creativity. 
+					</p>
+				</div>
+				<div class="span6 text-center">
+					<div class="ball blue"><i class="icon-trophy"></i></div>
+					<div class="lead"><strong>Y-gen talent Management</strong></div>
+					<p>
+						As members of gen Y, we can tell you how to attract, retain, and egnage young talent. 
+						How? Well, lets just say it’s not about parking spaces and bigger cubicals.
+					</p>
+				</div>
 			</div>
 	</div>
 </div>
 
-<div class="row about">
-	<div id="about" class="clearfix block">
+<div id="about" class="row about">
+	<div class="clearfix block">
 			<h1 class="text-center">About</h1>
 			<div class="span5">
 				<div class="lead">Nikolai Skievaski</div>
@@ -54,8 +69,8 @@
 	</div>
 </div>
 
-<div class="row">
-	<div id="work" class="clearfix block">
+<div id="work" class="row">
+	<div class="clearfix block">
 			<h1 class="text-center">Work</h1>
 			<div class="span4" style="margin-left:10px">
 				<%= image_tag 'http://fbiz.firstbusiness.com/qa-theme/FBB/images/VaultLoginHeader_background.jpg' %>
@@ -78,8 +93,8 @@
 			</div>
 	</div>
 </div>
-<div class="row contact_us">
-	<div id="contact_us" class="clearfix block">
+<div id="contact_us" class="row contact_us">
+	<div class="clearfix block">
 		<h1 class="text-center">Contact us</h1>
 		<%= form_for @email_subscription do |f| %>
 		  <% if @email_subscription.errors.any? %>
