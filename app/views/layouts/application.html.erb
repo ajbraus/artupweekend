@@ -41,19 +41,22 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div id="navbarTop" class="navbar navbar-static navbar-inverse header" data-spy="affix">
+        <div id="navbarTop" class="navbar navbar-static navbar-inverse" data-spy="affix">
           <div class="navbar-inner">
-            <a href="#home"><%= image_tag "fourlines.png", class:"logo" %></a>
-            <ul class="nav">
-              <li><%= link_to "Services", "#services" %></li>
-              <li><%= link_to "Principles", "#principles" %></li>
-              <li><%= link_to "Work", "#work" %></li>
-              <li><%= link_to "Contact Us", "#contact_us" %></li>
-              <li><%= link_to "Blog", "#", class:"blog-link" %></li>
-            </ul>
+            <div class="container">
+              <a href="#home"><%= image_tag "fourlines.png", class:"logo" %></a>
+              <ul class="nav">
+                <li><%= link_to "Home", "#home" %></li>
+                <li><%= link_to "Principles", "#principles" %></li>
+                <li><%= link_to "Services", "#services" %></li>
+                <li><%= link_to "Work", "#work" %></li>
+                <li><%= link_to "Contact Us", "#contact_us" %></li>
+                <li><%= link_to "Blog", "#", class:"blog-link" %></li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div data-spy="scroll" data-target="#navbarTop">
+        <div data-spy="scroll" data-target="body">
           <%= bootstrap_flash %>
           <%= yield %>
         </div> <!-- span9 -->

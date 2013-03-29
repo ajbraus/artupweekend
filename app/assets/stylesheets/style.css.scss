@@ -3,12 +3,6 @@ body {
 	font-family: Helvetica, lucida, sans-serif
 }
 
-.header {
-	background-color: white;
-	width:100%;
-	z-index: 1;
-}
-
 .nav {
 	text-align: right;
 }
@@ -37,6 +31,8 @@ h1 {
 }
 
 .row {
+	margin-left: 10px;
+		padding-top: 40px;
 
 }
 
@@ -115,6 +111,11 @@ min-height: 350px;
 	}
 }
 
+p {
+	font-size: 21px;
+line-height: 27px;
+}
+
 .about {
 	background:url('lined_paper.png');
 	margin-top: 40px;
@@ -129,13 +130,13 @@ min-height: 350px;
 	color:rgb(252, 183, 99);
 }
 
-.navbar .nav {
-	float: right;
-margin: 0 35px 0 0;
-}
-
 .navbar {
 	height: 44px;
+	width:100%;
+	.nav {
+		float: right;
+		margin: 0 35px 0 0;
+	}
 }
 .navbar-inner {
 	border-radius: 0;
@@ -155,11 +156,6 @@ position: relative;
 bottom: 280px;
 margin-bottom: -230px;
 z-index: -1;
-
-}
-
-.row {
-	padding-top: 40px;
 }
 
 #home {
