@@ -31,7 +31,6 @@ h1 {
 }
 
 .row {
-	margin-left: 10px;
 		padding-top: 40px;
 
 }
@@ -40,8 +39,9 @@ h1 {
 	height:300px;
 }
 
-.services {
-	background:url('lined_paper.pngz');
+.pitch {
+	background:url('lined_paper.png');
+	margin-top: 60px;
 }
 
 #work {
@@ -119,6 +119,7 @@ line-height: 27px;
 .about {
 	background:url('lined_paper.png');
 	margin-top: 40px;
+	height: 600px;
 }
 
 .contact_us {
@@ -133,6 +134,9 @@ line-height: 27px;
 .navbar {
 	height: 44px;
 	width:100%;
+	position: fixed;
+	top:0;
+	z-index: 10;
 	.nav {
 		float: right;
 		margin: 0 35px 0 0;
@@ -155,11 +159,15 @@ margin-left: 62px;
 position: relative;
 bottom: 280px;
 margin-bottom: -230px;
-z-index: -1;
+z-index: 0;
+}
+
+.main {
+
 }
 
 #home {
-	padding-top: 87px;
+	padding-top: 78px;
 	h1 {
 		font-size: 106px;
 line-height: 91px;
@@ -188,4 +196,22 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
 border-color: #252525;
 height: 22px;
 padding: 22px 0;
+}
+
+textarea {
+	height: 100px;
+width: 380px;
+}
+
+.tag-line {
+	position: relative;
+bottom: 48px;
+}
+
+.background {
+	position: absolute;
+	z-index: -1;
+	img {
+		width:100%;
+	}
 }

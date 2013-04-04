@@ -41,7 +41,11 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div id="navbarTop" class="navbar navbar-static navbar-inverse" data-spy="affix">
+        <div class="background" id="background">
+          <%= image_tag "narrow_train.png" %>
+        </div>
+
+        <div id="navbarTop" class="navbar navbar-static navbar-inverse">
           <div class="navbar-inner">
             <div class="container">
               <a href="#home"><%= image_tag "fourlines.png", class:"logo" %></a>
@@ -56,7 +60,7 @@
             </div>
           </div>
         </div>
-        <div data-spy="scroll" data-target="body">
+        <div class="main" data-spy="scroll" data-target="body">
           <%= bootstrap_flash %>
           <%= yield %>
         </div> <!-- span9 -->

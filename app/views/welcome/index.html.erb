@@ -2,33 +2,18 @@
 	<div class="clearfix block">
 			<h1 class="text-center">words</br>numbers<br>images</h1>
 			<%= image_tag "big_four_lines.png", class:"four-lines" %>
-			<div class="lead text-center">Business consulting for this generation</div>
+			<div class="lead text-center tag-line">Business consulting for this generation</div>
 	</div>
 </div>
 
-<div id="principles" class="row about">
+<div id="pitch" class="row pitch">
 	<div class="clearfix block">
-			<h1 class="text-center">principles</h1>
-			<div class="span5">
-				<%= image_tag "niko2.png" %>
-				<div class="lead text-center">Nikolai Skievaski</div>
-				<p>
-					Niko's people skills far overqualify him for his title: chief data nerd. 
-				</p>
-			</div>
-			<div class="span5 offset1">
-				<%= image_tag "adam2.png" %>
-				<div class="lead text-center">Adam Braus</div>
-				<p>
-					If Niko is the tip of the spear, Adam is the bloodgutters.
-				</p>
-			</div>
+		<h1 class="text-center">Is you business still stuck in the inbox?</h1>
 	</div>
 </div>
 
-<div id="services" class="row service">
+<div id="services" class="row services">
 	<div class="clearfix block">
-			<h1 class="text-center">Services</h1>
 			<div class="row">
 				<div class="span6 text-center" style="margin: 0;">
 					<div class="ball red"><i class="icon-thumbs-up"></i></div>
@@ -61,13 +46,34 @@
 					<div class="ball blue"><i class="icon-trophy"></i></div>
 					<div class="lead"><strong>Y-gen talent Management</strong></div>
 					<p>
-						How to attract, retain, and egnage young talent?
+						How to attract, retain, and engage young talent?
 						Well, lets just say it’s not about parking spaces and bigger cubicals.
 					</p>
 				</div>
 			</div>
 	</div>
 </div>
+
+<div id="principles" class="row about">
+	<div class="clearfix block">
+			<h1 class="text-center">Team</h1>
+			<div class="span5">
+				<%= image_tag "niko2.png" %>
+				<div class="lead text-center">Nikolai Skievaski</div>
+				<p>
+					Niko's people skills far overqualify him for his title: chief data nerd. 
+				</p>
+			</div>
+			<div class="span5 offset1">
+				<%= image_tag "adam2.png" %>
+				<div class="lead text-center">Adam Braus</div>
+				<p>
+					If Niko is the tip of the spear, Adam is the bloodgutters.
+				</p>
+			</div>
+	</div>
+</div>
+
 
 <div id="work" class="row">
 	<div class="clearfix">
@@ -111,8 +117,22 @@
 		    </div>
 		  <% end %>
 
-		  <%= f.label :email %></br>
-			<%= f.text_field :email %><br>
+		  <%= f.label :name, "name*" %>
+			<%= f.text_field :name %>
+
+		  <%= f.label :email, "email*" %>
+			<%= f.text_field :email %>
+
+		  <%= f.label :phone, "phone (optional)" %>
+			<%= f.text_field :phone %>
+
+		  <%= f.label :message, "message*" %>
+			<%= f.text_area :message %>
+
+			<br>
+			<%= f.check_box :newsletter, class:'pull-left', checked: true %>
+			<%= f.label :newsletter, "Recieve emails from us every now and then" %>
+
 			<%= f.submit "Signup" %>
 		<% end %>
 		<a href="https://twitter.com/wni_llc" class="twitter-follow-button" data-show-count="false">Follow @wni_llc</a>
