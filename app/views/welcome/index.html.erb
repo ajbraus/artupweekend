@@ -1,9 +1,11 @@
 <div id="home" class="row home">	
 	<div class="clearfix block">
-			<h1 class="text-center">words</br>numbers<br>images</h1>
-			<%= image_tag "big_four_lines.png", class:"four-lines" %>
-			<div class="lead text-center tag-line">Business consulting for this generation</div>
+		<h1 class="text-center">words</br>numbers<br>images</h1>
 	</div>
+	<div class="four-lines-container">
+		<%= image_tag "big_four_lines.png", class:"four-lines" %>
+	</div>
+	<div class="lead text-center tag-line">Business consulting for this generation</div>
 </div>
 
 <div id="pitch" class="row pitch">
@@ -54,27 +56,6 @@
 	</div>
 </div>
 
-<div id="principles" class="row about">
-	<div class="clearfix block">
-			<h1 class="text-center">Team</h1>
-			<div class="span5">
-				<%= image_tag "niko2.png" %>
-				<div class="lead text-center">Nikolai Skievaski</div>
-				<p>
-					Niko's people skills far overqualify him for his title: chief data nerd. 
-				</p>
-			</div>
-			<div class="span5 offset1">
-				<%= image_tag "adam2.png" %>
-				<div class="lead text-center">Adam Braus</div>
-				<p>
-					If Niko is the tip of the spear, Adam is the bloodgutters.
-				</p>
-			</div>
-	</div>
-</div>
-
-
 <div id="work" class="row">
 	<div class="clearfix">
 			<h1 class="text-center">Work</h1>
@@ -101,6 +82,27 @@
 		<%= image_tag 'http://fbiz.firstbusiness.com/qa-theme/FBB/images/VaultLoginHeader_background.jpg' %>
 	</div>
 </div>
+
+<div id="principles" class="row about">
+	<div class="clearfix block">
+			<h1 class="text-center">Team</h1>
+			<div class="span5">
+				<%= image_tag "niko2.png" %>
+				<div class="lead text-center">Nikolai Skievaski</div>
+				<p>
+					Niko's people skills far overqualify him for his title: chief data nerd. 
+				</p>
+			</div>
+			<div class="span5 offset1">
+				<%= image_tag "adam2.png" %>
+				<div class="lead text-center">Adam Braus</div>
+				<p>
+					If Niko is the tip of the spear, Adam is the bloodgutters.
+				</p>
+			</div>
+	</div>
+</div>
+
 <div id="contact_us" class="row contact_us">
 	<div class="clearfix block">
 		<h1 class="text-center">Contact us</h1>
@@ -133,7 +135,7 @@
 			<%= f.check_box :newsletter, class:'pull-left', checked: true %>
 			<%= f.label :newsletter, "Recieve emails from us every now and then" %>
 
-			<%= f.submit "Signup" %>
+			<%= f.submit "Contact Us" %>
 		<% end %>
 		<a href="https://twitter.com/wni_llc" class="twitter-follow-button" data-show-count="false">Follow @wni_llc</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

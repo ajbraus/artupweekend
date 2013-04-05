@@ -99,7 +99,8 @@ width: 50px;
 }
 
 .block {
-	width: 640px;
+	max-width:640px;
+	width: 80%;
 margin: 0 auto;
 min-height: 350px;
 }
@@ -119,7 +120,7 @@ line-height: 27px;
 .about {
 	background:url('lined_paper.png');
 	margin-top: 40px;
-	height: 600px;
+	min-height: 600px;
 }
 
 .contact_us {
@@ -129,6 +130,10 @@ line-height: 27px;
 
 .navbar-inverse .nav > li > a.blog-link {
 	color:rgb(252, 183, 99);
+}
+
+.navbar .nav > li > a {
+padding: 10px 10px 10px;
 }
 
 .navbar {
@@ -154,12 +159,18 @@ float: left;
 margin-top: 2px;
 }
 .four-lines {
-width: 525px;
-margin-left: 62px;
+max-width:486px;
+min-width:486px;
 position: relative;
-bottom: 280px;
-margin-bottom: -230px;
 z-index: 0;
+}
+
+.four-lines-container {
+	width: 100%;
+margin: 0 auto;
+position: absolute;
+bottom: 532px;
+text-align: center;
 }
 
 .main {
@@ -211,7 +222,10 @@ bottom: 48px;
 .background {
 	position: absolute;
 	z-index: -1;
+	width: 100%;
+	min-width: 660px;
 	img {
 		width:100%;
+		max-height: 928px;
 	}
 }
