@@ -41,7 +41,7 @@ h1 {
 
 .pitch {
 	background:url('lined_paper.png');
-	margin-top: 60px;
+	height: 300px;
 }
 
 #work {
@@ -103,6 +103,7 @@ width: 50px;
 	width: 80%;
 margin: 0 auto;
 min-height: 350px;
+padding-bottom: 50px;
 }
 
 #work {
@@ -118,14 +119,19 @@ line-height: 27px;
 }
 
 .about {
-	background:url('lined_paper.png');
+	background:url('graphy.png');
 	margin-top: 40px;
 	min-height: 600px;
 }
 
 .contact_us {
-	background:url('graphy.png');
+	background:url('madison.jpg');
 	height: 710px;
+}
+
+.contact {
+			background: rgba(255,255,255,0.4);
+padding: 0 240px;
 }
 
 .navbar-inverse .nav > li > a.blog-link {
@@ -144,7 +150,7 @@ padding: 10px 10px 10px;
 	z-index: 10;
 	.nav {
 		float: right;
-		margin: 0 35px 0 0;
+		margin-right:35px;
 	}
 }
 .navbar-inner {
@@ -166,11 +172,12 @@ z-index: 0;
 }
 
 .four-lines-container {
-	width: 100%;
+width: 100%;
 margin: 0 auto;
-position: absolute;
-bottom: 532px;
+position: relative;
 text-align: center;
+bottom: 374px;
+margin-bottom: -230px;
 }
 
 .main {
@@ -228,4 +235,35 @@ bottom: 48px;
 		width:100%;
 		max-height: 928px;
 	}
+}
+
+.niko-about {
+font-size: 16px;
+text-align: center;
+width: 290px;
+float: left;
+}
+
+.adam-about {
+font-size: 16px;
+text-align: center;
+width: 290px;
+float: right;
+}
+
+.social-box {
+	font-size: 32px;
+padding-top: 15px;
+	a {
+		color:black;
+		&:hover {
+			text-decoration:none;
+			color:grey;
+		}
+	}
+}
+
+.social-buttons {
+	text-align: center;
+	margin-top: 42px;
 }
