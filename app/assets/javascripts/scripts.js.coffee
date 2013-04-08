@@ -5,6 +5,9 @@ $ ->
 	$('.navbar-inner').mouseout -> 
 		$(@).animate 'padding-top': '0px', 200
 
-	$('.work-img').mouseenter ->
+	explanation = $('workExplanation')
 
-	$('work-img').mouseout ->
+	$('.work-img').hover(
+		-> $(@).find('.work-explanation').fadeToggle();
+		-> $(@).find('.work-explanation').fadeToggle();
+	)
