@@ -125,8 +125,12 @@ line-height: 27px;
 }
 
 .contact_us {
-	background:url('madison.jpg');
-	height: 710px;
+background: url("madison.jpg");
+background-repeat: no-repeat;
+height: 386px;
+background-size: 100%;
+min-width: 1110px;
+padding-top: 0;
 }
 
 .contact {
@@ -217,7 +221,7 @@ padding: 22px 0;
 }
 
 textarea {
-	height: 100px;
+	height: 85px;
 width: 380px;
 }
 
@@ -266,4 +270,8 @@ padding-top: 15px;
 .social-buttons {
 	text-align: center;
 	margin-top: 42px;
+}
+
+label {
+	margin-bottom: 0;
 }
