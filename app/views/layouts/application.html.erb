@@ -33,8 +33,8 @@
 
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 <% end %>
-  <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
   </head>
   <body>
@@ -70,11 +70,6 @@
       <%= bootstrap_flash %>
       <%= yield %>
     </div> <!-- span9 -->
-
-
-    <footer style="height: 210px;">
-      &copy; artup weekend 2013
-    </footer>
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
