@@ -6,9 +6,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: wni_development
+  database: artupweekend_development
   pool: 5
-  username: wni
+  username: artupweekend
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -17,15 +17,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: wni_test
+  database: artupweekend_test
   pool: 5
-  username: wni
+  username: artupweekend
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: wni_production
+  database: artupweekend_production
   pool: 5
-  username: wni
+  username: artupweekend
   password:

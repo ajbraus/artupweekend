@@ -1,3 +1,10 @@
-add work images
-add more images to background
-add background scroll
+Create materials for 
+	getting a venue
+	getting sponsors
+	getting artists
+	getting luminaries
+
+Create Logo
+
+Fix colors
+
