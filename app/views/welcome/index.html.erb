@@ -1,7 +1,7 @@
 <div id="home" class="row home">	
-		<h1>Artup Weekend</h1>
+	<h1>Artup Weekend</h1>
 	<!-- <p>less talk, more art</p> -->
-	<div class="span12">
+	<div class="row">
 		<div class="span6 pull-right">
 	    <blockquote class="pull-right" style="margin-top: 30px;">
 	      <p>Every child is an artist. The problem is how to remain an artist once they grow up.</p>
@@ -10,15 +10,13 @@
 	  </div>
 	</div>
 	<div class='row'>
-		<div class="span12">
 			<p>Madison, WI June 15 <a href="#">register ($50)</a></p>
 			<p><a href="#contact_us">your city here . . .</a></p>
-		</div>
 	</div>
 </div>
 
 <div id="how" class="row how">
-	<div class="span12">
+	<div class="row">
 	<h1>How It Works</h1>
 		<p>A bunch of creative people show up</p>
 		<p>As many as like pitch one or more idea for a work of art</p>
@@ -39,54 +37,28 @@
 </div>
 
 <div id="join" class="row join">
-<h1>Join</h1>
+<div class="row">
+	<h1>Join</h1>
+</div>
 </div>
 
 <div id="organize" class="row organize">
-<h1>Organize</h1>
-
-<dl>
-	<dt>Register</dt>
-	<dd>
-		Contact the team at artup weekend and we will give you approval and the
-	</dd>
-	<dt>Organize</dt>
-	<dd>
-		We have strategies to help you get the following:
-		<ul>
-			<li>
-				Venue
-			</li>
-			<li>
-				Attracting Artists
-			</li>
-			<li>
-				Sponsors
-			</li>
-			<li>
-				Speakers
-			</li>
-			<li>
-				Ticketing
-			</li>
-			<li>
-				Marketing
-			</li>
-			<li>
-				Swag
-			</li>
-		</ul>
-	</dd>
-	<dt>Organize</dt>
-	<dd>Blah</dd>
-	<dt>Organize</dt>
-	<dd>Blah</dd>
-</dl>
+<div class="row">
+	<h1>Organize</h1>
+	<p>
+		Contact the team at artup weekend and we can help you put on your city's, school's, company's, or neighborhood's artup weekend.
+	</p>
+	<p>
+		We have strategies to help you what you need to succeed, like a Venue,
+		Attracting Artists, Sponsors, and Speakers, and doing Ticketing, Marketing, and Swag.
+	</p>
+</div>
 </div>
 
 <div id="contact_us" class="row contact_us">
 	<div class="clearfix contact">
-		<h4>Contact us</h4>
+		<h1>Contact us</h1>
+		<div class="span7 offset2">
 		<%= form_for @email_subscription do |f| %>
 		  <% if @email_subscription.errors.any? %>
 		    <div id="error_explanation">
@@ -106,13 +78,14 @@
 		  <%= f.label :email, "email*" %>
 			<%= f.text_field :email %>
 
-		  <%= f.label :phone, "phone (optional)" %>
+		  <%= f.label :phone, "phone*" %>
 			<%= f.text_field :phone %>
 
 		  <%= f.label :message, "message*" %>
-			<%= f.text_area :message, value: "blah:&nl2br; blah:" %>
+			<%= f.text_area :message %>
 <br>
-			<%= f.submit "Send", class:"btn btn-success" %>
+			<%= f.submit "Send", class:"btn btn-success pull-right send-button" %>
 		<% end %>
+		</div>
 	</div>
 </div>

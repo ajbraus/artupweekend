@@ -66,11 +66,15 @@ input[type=text] {
 
 .navbar {
 	height: 50px;
+	position: fixed !important;
+	top:0;
+	width:100%;
 }
 
 .navbar-inner {
 		border:none !important;
 	background:none !important;
+	background-color: #2a333c !important;
 }
 
 #home {
@@ -112,7 +116,7 @@ padding: 22px 0;
 }
 
 textarea {
-height: 300px !important;
+height: 200px !important;
 width: 450px !important;
 padding:25px !important;
 font-size: 20px !important;
@@ -136,6 +140,7 @@ bottom: 48px;
 
 label {
 	margin-bottom: 0;
+	color:rgb(68, 64, 43) !important;
 }
 
 .work-explanation {
@@ -150,4 +155,8 @@ font-size: 16px;
 
 .tiny-margin-bottom {
 	margin-bottom: 5px;
+}
+
+.send-button {
+	margin: 10px 40px 60px 0 !important;
 }
