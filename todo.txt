@@ -4,7 +4,7 @@ Create materials for
 	getting artists
 	getting luminaries
 
-fix votes to comments
+add events subdomain
 
 add explanation to what art it up is
 

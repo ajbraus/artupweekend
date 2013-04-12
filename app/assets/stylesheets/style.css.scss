@@ -13,8 +13,8 @@ background-color: white;
 font-size: 20px !important;
 }
 
-p{
-	font-size: 26px;
+div {
+		font-size: 26px;
 line-height: 26px;
 }
 
@@ -90,8 +90,9 @@ padding-top: 20px;
 background-color: #80D5ED;
 height: 360px;
 padding-bottom: 60px;
-	p {
+	div {
 		color:rgb(105, 97, 97);
+		margin-left: 10px;
 	}
 }
 
@@ -250,4 +251,12 @@ clear: left;
 
 .lead {
 	font-family:helvetica, arial;
+}
+
+.social-shares {
+	text-align: right;
+}
+
+.pitch {
+	margin-right: 50px;
 }

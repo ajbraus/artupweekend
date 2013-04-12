@@ -2,12 +2,22 @@
 <div class="container">
 	<div class="row">
 		<h1>Artup Weekend</h1>
-		<p class="lead pull-right">Make a work of art 54 hours</p>
-	<!-- <p>less talk, more art</p> -->
+		<div class="lead pull-right pitch">A Weekend to Collborate And Make Art</div>
+	<!-- <div>less talk, more art</div> -->
 	</div>
 	<div class='row'>
-			<p>Madison, WI June 15 <a href="#">register ($50)</a></p>
-			<p><a href="#contact_us">your city here . . .</a></p>
+		<div>Madison, WI June 15 <a href="#contact_us">register($60)</a>
+		<% if false %>
+		<% @events.each do |event| %>
+			<div><%= link_to event.name, root_url(subdomain: event.subdomain) %> <%= event.start_date %> ($60)</a></div>
+		<% end %>
+		<% end %>
+		<div><a href="#contact_us">your city here . . .</a></div>
+	</div>
+	<div class="social-shares">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="artupweekend" data-size="large" data-hashtags="artupweekend">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		<div class="fb-like" data-href="http://www.facebook.com/artupweekend" data-send="true" data-width="150" data-show-faces="true"></div>
 	</div>
 </div>
 </div>
@@ -16,16 +26,16 @@
 	<div class="container">
 		<div class="row">
 			<h1>How It Works</h1>
-				<p>Creative people show up</p>
-				<p>They bring one 11x17 sketch and one 8x10 artist statment per work of art they want to collaborate on</p>
-				<p>Everyone gets 5 votes</p>
-				<p>Everyone votes for projects they want to see made</p>
-				<p>Teams form around the top 15-25 projects</p>
-				<p>Funds for materials are available based on votes to those pieces</p>
+				<div>Creative people show up</div>
+				<div>They bring <span><h2 style="display:inline;">1</h2></span> page of sketchs and <span><h2 style="display:inline">1</h2></span> page for an artist statment per idea</div>
+				<div>Everyone gets <span><h2 style="display:inline;">5</h2></span> votes</div>
+				<div>Everyone votes for projects they want to see made</div>
+				<div>Teams form around the top <span><h2 style="display:inline;">~25</h2></span> projects</div>
+				<div>Funds for materials are available based on votes to those pieces</div>
 			<blockquote>
-				48 hours later
+				<span><h2 style="display:inline;">48</h2></span> hours later
 			</blockquote>
-			<p>Teams present their art</p>
+			<div>Let the gallery begin</div>
 			<hr>
 			<blockquote>
 				Total: 54 hours

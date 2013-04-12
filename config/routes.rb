@@ -16,9 +16,12 @@ Wni::Application.routes.draw do
     end
   end
 
-  root :to => 'welcome#index'
+  match '', to: 'events#show', constraints: {subdomain: /.+/}
+
   get "welcome/index"
   resources :email_subscriptions, only: [:new, :create, :index]
+
+  root :to => 'welcome#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
