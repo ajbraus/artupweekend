@@ -5,20 +5,16 @@ Create materials for
 	getting luminaries
 
 add events subdomain
+setup pow
+railscast
 
-add explanation to what art it up is
-
-maximize virtical space for index of posts
-
+Check if MX records resolved
+setup Sendgrid
 add welcome email
 add email contact_us
 
-display username
-display reputation points count
-
 paginate posts
 paginate comments
-
 
 add event registration
 	login/register user record
