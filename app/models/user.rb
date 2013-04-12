@@ -14,4 +14,10 @@ class User < ActiveRecord::Base
   has_many :comments
   belongs_to :event
   validates :name, :username, presence: true
+
+  after_create :send_welcome
+
+  def send_welcome
+    Notifier.welcome(self)
+  end
 end
