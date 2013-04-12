@@ -31,8 +31,11 @@
               <h4><%= post.title %></h4>
               <div class="muted"><%= auto_link(post.short_body) %></div>
             </div>
-            <div class="span4 pull-right small">
-              by: <%= post.user.username %>
+            <div class="small pull-right">
+              <%= post.nice_created_at %>
+            </div>            
+            <div class="muted pull-right small">
+              <%= post.user.username %>
             </div>
             <% end %>
           </div>
