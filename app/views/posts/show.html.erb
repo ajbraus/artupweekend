@@ -20,7 +20,7 @@
 			<h2>
 				<%= @post.title %>
 			</h2>
-			<%= @post.body %>
+			<div class="lead"><%= @post.body %></div>
 			<div class="pull-right">
 			<% if user_signed_in? && current_user == @post.user %>
 			<%= link_to 'Edit', edit_post_path(@post), class:'btn btn-warning' %>
@@ -37,8 +37,11 @@
 	</div>
 	<div class="row">
 		<div class="span10 comment">
-			<%= render partial: "comments/form" %>
+			<% if user_signed_in? %>
+				<%= render partial: "comments/form" %>
+			<% end %>
 			<div class="comments">
+				<h5>comments</h5>
 				<%= render partial: "comments/show", collection: @post_comments, as: :comment %>
 			</div>
 		</div>			
