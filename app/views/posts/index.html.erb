@@ -29,7 +29,7 @@
             <%= link_to post do %>
             <div class="span10">
               <h4><%= post.title %></h4>
-              <div class="muted"><%= post.short_body %></div>
+              <div class="muted"><%= auto_link(post.short_body) %></div>
             </div>
             <div class="span4 pull-right small">
               by: <%= post.user.username %>

@@ -20,7 +20,7 @@
 			<h2>
 				<%= @post.title %>
 			</h2>
-			<div class="lead"><%= @post.body %></div>
+			<div class="lead"><%= auto_link(@post.body) %></div>
 			<div class="pull-right">
 			<% if user_signed_in? && current_user == @post.user %>
 			<%= link_to 'Edit', edit_post_path(@post), class:'btn btn-warning' %>

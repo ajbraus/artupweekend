@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    @post_comments = @post.comments
+    @post_comments = @post.comments.order('created_at DESC')
     if user_signed_in? 
       @comment = @post.comments.new(user_id: current_user.id)
     end
