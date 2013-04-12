@@ -27,9 +27,13 @@
 			<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
 			<% end %>
 			</div>
-			<div class="muted pull-right">
-				by: <%= @post.user.name %>
-			</div>
+			<div class="muted small pull-right">
+				<%= @post.user.name %>
+			</div>			
+			<div class="small pull-right">
+				<%= @post.nice_created_at %>
+			</div>			
+
 			<div class="tags">
 					<%= raw @post.tag_list.map { |t| link_to t, tag_path(t), class:"label" }.join(' ') %>
 			</div>

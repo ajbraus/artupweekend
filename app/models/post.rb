@@ -13,4 +13,9 @@ class Post < ActiveRecord::Base
       self.body
     end
   end
+
+  def nice_created_at
+    self.created_at.strftime "%b %e, %l:%M%P"
+  end
+
 end

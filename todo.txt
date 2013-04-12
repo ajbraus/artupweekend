@@ -9,11 +9,9 @@ railscast
 fix www. heroku problem
 
 after sign_up go to art it up page
-make links available in description of art it up
 fix the extra comment that is there
 add social share buttons to individual art it up posts
 
-Check if MX records resolved
 setup Sendgrid
 add welcome email
 add email contact_us
