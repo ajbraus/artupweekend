@@ -59,7 +59,7 @@ border-color: #252525;
 	}
 }
 
-input[type=text], input[type=email], input[type=password] {
+input[type=text], input[type=email], input[type=password],textarea {
 	border-radius:0 !important;
 	padding:20px !important;
 	font-size:25px !important;
@@ -259,4 +259,12 @@ clear: left;
 
 .pitch {
 	margin-right: 50px;
+}
+
+.tags {
+	margin:10px 0;
+}
+
+.tag-header {
+	padding-top:10px;
 }

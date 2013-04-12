@@ -1,9 +1,10 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments
-  attr_accessible :body, :title
+  attr_accessible :body, :title, :tag_list
+  acts_as_taggable
   acts_as_voteable
-  validates :title, presence: true
+  validates :title, :tag_list, presence: true
 
   def short_body
     if self.body.size >=200

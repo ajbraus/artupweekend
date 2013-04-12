@@ -14,6 +14,10 @@ gem 'coffeebeans'
 gem 'devise'
 gem 'thumbs_up'
 
+gem 'acts-as-taggable-on'
+
+gem 'sendgrid'
+
 gem "hike", "~> 1.2.2"
 
 group :development do

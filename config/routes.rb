@@ -1,6 +1,8 @@
 Wni::Application.routes.draw do
   resources :events
 
+  get 'tags/:tag', to: 'posts#index', as: :tag
+  
   devise_for :users
 
   resources :posts do

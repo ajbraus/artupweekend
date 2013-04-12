@@ -30,6 +30,9 @@
 			<div class="muted pull-right">
 				by: <%= @post.user.name %>
 			</div>
+			<div class="tags">
+					<%= raw @post.tag_list.map { |t| link_to t, tag_path(t), class:"label" }.join(' ') %>
+			</div>
 		</div>
 	</div>
 	<div class="row">

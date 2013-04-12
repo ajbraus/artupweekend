@@ -8,8 +8,6 @@ add events subdomain
 railscast
 fix www. heroku problem
 
-style textarea
-
 after sign_up go to art it up page
 make links available in description of art it up
 fix the extra comment that is there
