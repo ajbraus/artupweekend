@@ -6,6 +6,7 @@ Wni::Application.routes.draw do
   devise_for :users
 
   resources :posts do
+    get :posts, path: '/artitup'
     resources :comments do
       member do
         get :vote_up

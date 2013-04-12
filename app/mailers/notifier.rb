@@ -1,5 +1,4 @@
 class Notifier < ActionMailer::Base
-  include UsersHelper
   include ActionView::Helpers::AssetTagHelper
   layout 'email' # use email.(html|text).erb as the layout for emails
   default from: "Artup Weekend team@artupweekend.org"
