@@ -5,14 +5,15 @@ Create materials for
 	getting luminaries
 
 add events subdomain
-setup pow
 railscast
+fix www. heroku problem
 
-add Madison event to production
+style textarea
 
-require 'date'
-d = Date.parse("2013-06-14T18:00:00-05:00")
-Event.create(name:"Madison, WI", starts_at: d, location:"640 West Washington Traincar E - the hoos.in train", img_url:"http://www.pps.org/graphics/gpp/wisconsin_capitol_large")
+after sign_up go to art it up page
+make links available in description of art it up
+fix the extra comment that is there
+add social share buttons to individual art it up posts
 
 Check if MX records resolved
 setup Sendgrid
@@ -30,3 +31,10 @@ add event registration
 
 add attendees to events
 
+
+
+make more events
+
+require 'date'
+d = Date.parse("2013-06-14T18:00:00-05:00")
+Event.create(name:"Madison, WI", starts_at: d, location:"640 West Washington Traincar E - the hoos.in train", img_url:"http://www.pps.org/graphics/gpp/wisconsin_capitol_large", subdomain:"madison")

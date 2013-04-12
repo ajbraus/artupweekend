@@ -1,0 +1,12 @@
+export PATH ; PATH="/Users/Achilles/.rvm/gems/ruby-1.9.3-p385/bin:/Users/Achilles/.rvm/gems/ruby-1.9.3-p385@global/bin:/Users/Achilles/.rvm/rubies/ruby-1.9.3-p385/bin:/Users/Achilles/.rvm/bin:$PATH"
+export rvm_env_string ; rvm_env_string='ruby-1.9.3-p385'
+export rvm_path ; rvm_path='/Users/Achilles/.rvm'
+export rvm_ruby_string ; rvm_ruby_string='ruby-1.9.3-p385'
+unset rvm_gemset_name
+export RUBY_VERSION ; RUBY_VERSION='ruby-1.9.3-p385'
+export GEM_HOME ; GEM_HOME='/Users/Achilles/.rvm/gems/ruby-1.9.3-p385'
+export GEM_PATH ; GEM_PATH='/Users/Achilles/.rvm/gems/ruby-1.9.3-p385:/Users/Achilles/.rvm/gems/ruby-1.9.3-p385@global'
+export MY_RUBY_HOME ; MY_RUBY_HOME='/Users/Achilles/.rvm/rubies/ruby-1.9.3-p385'
+export IRBRC ; IRBRC='/Users/Achilles/.rvm/rubies/ruby-1.9.3-p385/.irbrc'
+unset MAGLEV_HOME
+unset RBXOPT
