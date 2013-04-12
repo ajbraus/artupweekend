@@ -20,4 +20,8 @@ class User < ActiveRecord::Base
   def send_welcome
     Notifier.welcome(self)
   end
+
+  def first_name
+    self.name.split(' ')[0]
+  end
 end
