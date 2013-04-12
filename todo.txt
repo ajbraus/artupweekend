@@ -4,7 +4,27 @@ Create materials for
 	getting artists
 	getting luminaries
 
-Create Logo
+fix votes to comments
 
-Fix colors
+add explanation to what art it up is
+
+maximize virtical space for index of posts
+
+add welcome email
+add email contact_us
+
+display username
+display reputation points count
+
+paginate posts
+paginate comments
+
+
+add event registration
+	login/register user record
+	request event
+	create event
+	event show
+
+add attendees to events
 

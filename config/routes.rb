@@ -1,4 +1,21 @@
 Wni::Application.routes.draw do
+  resources :events
+
+  devise_for :users
+
+  resources :posts do
+    resources :comments do
+      member do
+        get :vote_up
+        get :vote_down
+      end
+    end
+    member do
+      get :vote_up
+      get :vote_down
+    end
+  end
+
   root :to => 'welcome#index'
   get "welcome/index"
   resources :email_subscriptions, only: [:new, :create, :index]

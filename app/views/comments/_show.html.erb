@@ -1,0 +1,36 @@
+<div class="comment">
+	<div class="row-fluid">
+		<div class='span2'>
+			<div class="vote-count">
+				<%= comment.plusminus %>
+			</div>
+			<div class="votes-post">
+				<% if user_signed_in? %>
+					<%= link_to vote_up_post_comment_path([comment.post, comment]) do %>
+						<p><i class="icon-chevron-up <%= current_user.voted_for?(comment) ? 'voted' : 'not-voted' %>"></i></p>
+					<% end %>
+					<% if user_signed_in? && current_user.karma > 100 %>
+					<%= link_to vote_down_post_comment_path([comment.post, comment]) do %>
+						<p><i class="icon-chevron-down <%= current_user.voted_against?(comment) ? 'voted' : 'not-voted' %>"></i></p>
+					<% end %>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+		<div class="span9">
+			<%= comment.content %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="muted small pull-right">
+		  <% if comment.user_id.present? %>
+		  	<%= comment.user.name %>
+		  	<% if user_signed_in? && comment.user == current_user %>
+					<%= link_to 'Edit', edit_post_comment_path([comment.post,comment]) %>
+				<% end %>
+		  <% else %>
+		  	anonymous
+		  <% end %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container-fluid">
+	<%= render 'header' %>
+	<div class="row">
+		<div class="span12">
+			<div class="vote-count">
+				<%= @post.plusminus %>
+			</div>
+			<div class="votes-post">
+				<% if user_signed_in? %>
+					<%= link_to vote_up_post_path(@post) do %>
+						<p><i class="icon-chevron-up <%= current_user.voted_for?(@post) ? 'voted' : 'not-voted' %>"></i></p>
+					<% end %>
+					<% if user_signed_in? && current_user.karma > 100 %>
+					<%= link_to vote_down_post_path(@post) do %>
+						<p><i class="icon-chevron-down <%= current_user.voted_against?(@post) ? 'voted' : 'not-voted' %>"></i></p>
+					<% end %>
+					<% end %>
+				<% end %>
+			</div>
+			<h2>
+				<%= @post.title %>
+			</h2>
+			<%= @post.body %>
+			<div class="pull-right">
+			<% if user_signed_in? && current_user == @post.user %>
+			<%= link_to 'Edit', edit_post_path(@post), class:'btn btn-warning' %>
+			<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
+			<% end %>
+			</div>
+			<div class="muted pull-right">
+				by: <%= @post.user.name %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span10 comment">
+			<%= render partial: "comments/form" %>
+			<div class="comments">
+				<%= render partial: "comments/show", collection: @post_comments, as: :comment %>
+			</div>
+		</div>			
+	</div>
+</div>

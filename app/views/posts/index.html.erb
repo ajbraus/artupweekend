@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <%= render 'header' %>
+  <div class="row-fluid posts-list">
+    <div class="span12">
+    <ul>
+    <% @posts.each do |post| %>
+        <li class="clear-both post">
+          <div class="row-fluid post-item">
+            <div class="span2">
+            <div class="vote-count">
+              <%= post.plusminus %>
+            </div>
+            <div class="votes-post">
+              <% if user_signed_in? %>
+                <%= link_to vote_up_post_path(post) do %>
+                  <p><i class="icon-chevron-up <%= current_user.voted_for?(post) ? 'voted' : 'not-voted' %>"></i></p>
+                <% end %>
+                <% if user_signed_in? && current_user.karma > 100 %>
+                  <%= link_to vote_down_post_path(post) do %>
+                    <p><i class="icon-chevron-down <%= current_user.voted_against?(post) ? 'voted' : 'not-voted' %>"></i></p>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+            </div>
+            <%= link_to post do %>
+            <div class="span10">
+              <h4><%= post.title %></h4>
+              <div class="muted"><%= post.short_body %></div>
+            </div>
+            <div class="span4 pull-right small">
+              by: <%= post.user.username %>
+            </div>
+            <% end %>
+          </div>
+        </li>
+    <% end %>
+    </ul>
+    </div>
+  </div> 
+</div>

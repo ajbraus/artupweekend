@@ -3,11 +3,8 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'rails', '3.2.6'
-
 gem 'heroku'
-
 gem 'pg'
-
 gem 'thin'
 
 gem 'jquery-rails'
@@ -15,6 +12,13 @@ gem 'twitter-bootstrap-rails'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'coffeebeans'
+
+gem 'pry'
+gem 'pry-debugger'
+
+gem 'devise'
+
+gem 'thumbs_up'
 
 gem 'lazy_high_charts'
 

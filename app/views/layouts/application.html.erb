@@ -45,30 +45,40 @@
       <div class="navbar-inner">
         <div class="container">
           <ul class="nav pull-left">
-            <li><%= link_to "Top", "#home" %></li>
-            <li><%= link_to "How It Works", "#how" %></li>
-            <li><%= link_to "Join", "#join" %></li>
-            <li><%= link_to "Organize", "#organize" %></li>
-            <li><%= link_to "Contact", "#contact_us" %></li>
+            <li><%= link_to "Home", "/#home" %></li>
+            <li><%= link_to "How It Works", "/#how" %></li>
+            <li><%= link_to "Contact", "/#contact_us" %></li>
+            <% if false %>
             <li><%= link_to "Blog", "http://artupweekend.blogspot.com/", class:"blog-link" %></li>
+            <% end %>
+            <li><%= link_to "art it up ( new! )", posts_path %></li>
           </ul>
           <div class="social-buttons">
             <ul class="nav pull-right">
-              <li><h4>t</h4></li>
-              <li><h4>f</h4></li>
-              <li><h4>g+</h4></li>
-              <li><h4>in</h4></li>
-              <li><h4>flickr</h4></li>
-              <br>
-              <li>#artupweekend</li>
+              <li><h4><%= link_to "t", "http://www.twitter.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
+              <li><h4><%= link_to "f", "http://www.facebook.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
+              <li><h4><%= link_to "g+", "https://plus.google.com/101596467391423937181", rel: "publisher" %>&nbsp;&nbsp;</h4></li>
+              <li><h4><%= link_to "i", "http://instagram.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
+              <li style="margin: 18px 0;">#artupweekend</li>
             </ul>
           </div>
+          <div class="authentication">
+            <% if user_signed_in? %>
+              <%= current_user.username %> - <%= current_user.karma %> | <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
+            <% else %>
+              <%= link_to "Art in", new_session_path(:user) %> | <%= link_to "Art up", new_registration_path(:user) %>
+            <% end %>
         </div>
       </div>
     </div>
     <div class="main">
       <%= bootstrap_flash %>
       <%= yield %>
+      <footer>
+        <div class='offset1 span11'>
+          Artup Weekend
+        </div>
+      </footer>
     </div> <!-- span9 -->
     <!-- Javascripts
     ================================================== -->
