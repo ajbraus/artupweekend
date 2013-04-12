@@ -41,7 +41,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post_comments = @post.comments
-    @comment = @post.comments.new(user_id: current_user.id)
+    if user_signed_in? 
+      @comment = @post.comments.new(user_id: current_user.id)
+    end
 
 
     respond_to do |format|
