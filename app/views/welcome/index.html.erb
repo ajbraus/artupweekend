@@ -5,11 +5,12 @@
 		<div class="lead pull-right pitch">Artup Weekend is a global network of passionate artists and cultural creatives on a mission to inspire, educate, and empower individuals, teams and communities. Come share ideas, form teams, and create art.</div>
 	</div>
 	<div class='row'>
-		<div>Madison, WI June 14 <a href="#contact_us">register($60)</a>
-		<% if false %>
 		<% @events.each do |event| %>
-			<div><%= link_to event.name, root_url(subdomain: event.subdomain) %> <%= event.start_date %> ($60)</a></div>
-		<% end %>
+			<div>
+				<%= link_to root_url(subdomain: event.subdomain) do %>
+					<%= event.name %> 
+				<% end %>
+					- <%= event.start_date %> <%= link_to "register ($60)", "http://artupweekendmadison.eventbrite.com/" %></a></div>
 		<% end %>
 		<div><a href="#contact_us">your city here . . .</a></div>
 	</div>

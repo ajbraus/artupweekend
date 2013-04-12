@@ -184,6 +184,7 @@ DEPENDENCIES
   coffeebeans
   devise
   heroku
+  hike (~> 1.2.2)
   jquery-rails
   less-rails
   pg

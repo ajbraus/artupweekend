@@ -14,6 +14,7 @@ gem 'coffeebeans'
 gem 'devise'
 gem 'thumbs_up'
 
+gem "hike", "~> 1.2.2"
 
 group :development do
 	gem 'pry'

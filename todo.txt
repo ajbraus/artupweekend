@@ -8,6 +8,12 @@ add events subdomain
 setup pow
 railscast
 
+add Madison event to production
+
+require 'date'
+d = Date.parse("2013-06-14T18:00:00-05:00")
+Event.create(name:"Madison, WI", starts_at: d, location:"640 West Washington Traincar E - the hoos.in train", img_url:"http://www.pps.org/graphics/gpp/wisconsin_capitol_large")
+
 Check if MX records resolved
 setup Sendgrid
 add welcome email
