@@ -337,7 +337,7 @@
               <tr>
                   <td align="center" valign="top">
                         <!-- // Begin Template Preheader \\ -->
-                        <table border="0" cellpadding="10" cellspacing="0" width="600" id="templatePreheader">
+                        <table border="0" cellpadding="10" cellspacing="0" width="540" id="templatePreheader">
                             <tr>
                                 <td valign="top" class="preheaderContent">
                                 
@@ -346,20 +346,15 @@
                                       <tr>
                                           <td valign="top">
                                               <div mc:edit="std_preheader_content">
-                                                   Artup Weekend is a global network of passionate artists and cultural creatives on a mission to inspire, educate, and empower individuals, teams and communities. Come share ideas, collaborate, and create art.
-                                                </div>
-                                            </td>
+                                              </div>
+                                          </td>
                                             <!-- *|IFNOT:ARCHIVE_PAGE|* -->
-                      <td valign="top" width="190">
-                                              <div mc:edit="std_preheader_links">
-                                                  Is this email not displaying correctly?<br /><a href="*|ARCHIVE|*" target="_blank">View it in your browser</a>.
-                                                </div>
-                                            </td>
+                                          <td valign="top" width="190">
+                                          </td>
                       <!-- *|END:IF|* -->
-                                        </tr>
+                                      </tr>
                                     </table>
                                   <!-- // End Module: Standard Preheader \ -->
-                                
                                 </td>
                             </tr>
                         </table>
@@ -373,7 +368,7 @@
                                             <td class="headerContent">
                                             
                                               <!-- // Begin Module: Standard Header Image \\ -->
-                                              <img src="http://www.artupweekend.org/assets/artupweekend.png" style="max-width:600px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext />
+                                              <img src="http://www.artupweekend.org/assets/artupweekend.png" style="max-width:540px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext />
                                               <!-- // End Module: Standard Header Image \\ -->
                                             
                                             </td>
@@ -393,8 +388,8 @@
                                                 <table border="0" cellpadding="20" cellspacing="0" width="100%">
                                                     <tr>
                                                         <td valign="top">
-                                                          <% yield %>
-                            </td>
+                                                          <%= yield %>
+                                                        </td>
                                                     </tr>
                                                 </table>
                                                 <!-- // End Module: Standard Content \\ -->
@@ -417,18 +412,19 @@
                                                     <tr>
                                                         <td colspan="2" valign="middle" id="social">
                                                             <div mc:edit="std_social">
-                                                                &nbsp;<a href="*|TWITTER:PROFILEURL|*">follow on Twitter</a> | <a href="*|FACEBOOK:PROFILEURL|*">friend on Facebook</a> | <a href="*|FORWARD|*">forward to a friend</a>&nbsp;
+                                                                &nbsp;<a href="http://www.twitter.com/artupweekend">Follow us on Twitter</a> | <a href="http://www.facebook.com/artupweekend">Like us on Facebook</a> | <a href="http://www.instagram.com/artupweekend">Follow us on Instagram</a> | #artupweekend &nbsp;  
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td valign="top" width="350">
                                                             <div mc:edit="std_footer">
-                                <em>Copyright &copy; 2013 Artup Weekend, All rights reserved.</em>
-                                <strong>Our mailing address is:</strong>
-                                <br />
-                                640 West Washington (Train Car E)<br/>
-                                Madison, WI 53503
+                                                              <em>Copyright &copy; 2013 Artup Weekend, All rights reserved.</em>
+                                                              <br />
+                                                              <strong>Our mailing address is:</strong>
+                                                              <br />
+                                                              640 West Washington (Train Car E)<br/>
+                                                              Madison, WI 53503
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -441,7 +437,6 @@
                                                     </tr>
                                                 </table>
                                                 <!-- // End Module: Standard Footer \\ -->
-                                            
                                             </td>
                                         </tr>
                                     </table>

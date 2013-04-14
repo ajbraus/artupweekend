@@ -1,4 +1,4 @@
-Wni::Application.routes.draw do
+ArtupWeekend::Application.routes.draw do
   resources :events
 
   get 'tags/:tag', to: 'posts#index', as: :tag

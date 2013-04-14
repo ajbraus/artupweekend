@@ -5,7 +5,7 @@ class Notifier < ActionMailer::Base
 
   def welcome(user)
     @user = user
-    mail to: user.email, subject: "The Best Community of Artists - Artup Weekend"
+    mail to: user.email, subject: "A Community of Artists - Artup Weekend"
     # rescue => ex
     # Airbrake.notify(ex)
   end

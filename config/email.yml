@@ -1,0 +1,15 @@
+development:
+  :address: smtp.gmail.com
+  :port: 587
+  :authentication: plain
+  :user_name: ajbraus@gmail.com
+  :password: "Unistar&*("
+  :enable_starttls_auto: true
+production:
+  :user_name: artupweekend
+  :password: "artUPweekend"
+  :domain: artupweekend.org
+  :address: smtp.sendgrid.net
+  :port: 587
+  :authentication: plain
+  :enable_starttls_auto: true
