@@ -78,7 +78,7 @@
             <% if user_signed_in? %>
               <%= current_user.username %> - <%= current_user.karma %> | <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
             <% else %>
-              <%= link_to "Art in", new_session_path(:user) %> | <%= link_to "Art up", new_registration_path(:user) %>
+              <%= link_to "Sign Up", new_registration_path(:user) %> | <%= link_to "Art in", new_session_path(:user) %>
             <% end %>
         </div>
       </div>
