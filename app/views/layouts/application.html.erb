@@ -59,7 +59,11 @@
             <% if false %>
             <li><%= link_to "Blog", "http://artupweekend.blogspot.com/", class:"blog-link" %></li>
             <% end %>
-            <li><%= link_to "art it up ( new! )", posts_path %></li>
+            <li>
+              <%= link_to posts_path do %>
+                art it up <span class="orange">new!</span>
+              <% end %>
+            </li>
           </ul>
           <div class="social-buttons">
             <ul class="nav pull-right">

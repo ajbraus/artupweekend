@@ -13,7 +13,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @event = Event.find_by_subdomain!(request.subdomain)
+    @event = Event.find(params[:id])
     #@event = Event.find(params[:id])
 
     respond_to do |format|

@@ -7,7 +7,7 @@
 	<div class='row'>
 		<% @events.each do |event| %>
 			<div>
-				<%= link_to root_url(subdomain: event.subdomain) do %>
+				<%= link_to event_path(event) do %>
 					<%= event.name %> 
 				<% end %>
 					- <%= event.start_date %> <%= link_to "register ($60)", "http://artupweekendmadison.eventbrite.com/" %></a></div>

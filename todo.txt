@@ -1,10 +1,12 @@
+Prizes
+
+
 Create materials for 
 	getting a venue
 	getting sponsors
 	getting artists
 	getting luminaries
 
-add events subdomain
 railscast
 fix www. heroku problem
 

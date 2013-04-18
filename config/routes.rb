@@ -17,8 +17,6 @@ ArtupWeekend::Application.routes.draw do
       get :vote_down
     end
   end
-  
-  match '', to: 'events#show', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
 
   get "welcome/index"
   resources :email_subscriptions, only: [:new, :create, :index]
