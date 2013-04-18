@@ -64,6 +64,7 @@ GEM
     excon (0.20.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    friendly_id (4.0.9)
     heroku (2.37.2)
       heroku-api (~> 0.3.7)
       launchy (>= 0.3.2)
@@ -191,6 +192,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   coffeebeans
   devise
+  friendly_id
   heroku
   hike (~> 1.2.2)
   jquery-rails
