@@ -7,9 +7,6 @@ Create materials for
 	getting artists
 	getting luminaries
 
-railscast
-fix www. heroku problem
-
 after sign_up go to art it up page
 fix the extra comment that is there
 add social share buttons to individual art it up posts
