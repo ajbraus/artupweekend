@@ -236,6 +236,8 @@ blockquote {
 }
 
 .contact_us {
+	min-height: 260px;
+	background: white;
 	label {
 		color:#696161;
 	}
@@ -281,4 +283,8 @@ float: right;
 	margin-top: 80px;
 padding-top: 50px;
 border-top: 1px solid white;
+}
+
+.black {
+	color:black;
 }
