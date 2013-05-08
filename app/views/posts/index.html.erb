@@ -22,18 +22,15 @@
   </div>
 </div>
 <div class="container-fluid">
-  <div class="row">
-    <h1 class="clear-both">Art It Up</h1>
-    <div class="lead">the best place to share and find collaborative art online</div>
-    <%= link_to 'New Post', new_post_path, class:'btn btn-info pull-left' %>
-  </div>  
       <% if @tag.present? %>
         <h1 class='tag-header'># <%= @tag  %></h1>
       <% end %>
   <div class="row-fluid posts-list">
     <div class="span9">
-    <ul>
-    <% @posts.each do |post| %>
+      <h1 class="clear-both">Art It Up</h1>
+      <div class="lead">the best place to share and find collaborative art online</div>
+      <ul>
+      <% @posts.each do |post| %>
         <li class="clear-both post">
           <div class="row-fluid post-item">
             <div class="span2">
@@ -71,7 +68,15 @@
     </ul>
     </div>
     <div class="span3">
+      <div class="authentication">
+        <% if user_signed_in? %>
+          <%= link_to 'New Post', new_post_path, class:'btn btn-info pull-left' %>
+        <% else %>
+          <%= link_to "Sign Up", new_registration_path(:user) %> | <%= link_to "Art In", new_session_path(:user) %>
+        <% end %>
+      </div>           
       <div id="tag_cloud">
+        <h3>Tags</h3>
         <% tag_cloud Post.tag_counts, %w[l] do |tag, css_class| %>
           <%= link_to tag.name, tag_path(tag.name), class: "label" %>
         <% end %>

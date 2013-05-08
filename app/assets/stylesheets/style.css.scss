@@ -22,8 +22,8 @@ h1 {
 	font-size:80px;
 	line-height: 1;
 	margin-left:10px !important;
-	padding-top:80px;
-	padding-bottom:30px;
+	padding-top: 30px;
+	padding-bottom: 50px;
 }
 
 h1,h2,h3,h4,h5 {
@@ -246,10 +246,7 @@ blockquote {
 }
 
 .authentication {
-	float: right;
-position: relative;
-bottom: 8px;
-clear: left;
+margin-bottom: 55px;
 }
 
 .lead {
@@ -277,4 +274,11 @@ float: right;
 
 .comments {
 	border-top:1px solid white;
+}
+
+
+.how {
+	margin-top: 80px;
+padding-top: 50px;
+border-top: 1px solid white;
 }
