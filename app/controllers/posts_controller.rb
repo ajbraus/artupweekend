@@ -25,10 +25,10 @@ class PostsController < ApplicationController
   def index
     @events = Event.order("starts_at DESC")
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag]).order("created_at DESC")
+      @posts = Post.tagged_with(params[:tag]).order("created_at DESC").limit(10)
       @tag = params[:tag]
     else
-      @posts = Post.order("created_at DESC")
+      @posts = Post.order("created_at DESC").limit(10)
     end
     @user = User.new
 
