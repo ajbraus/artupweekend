@@ -23,12 +23,14 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   def index
+    @events = Event.order("starts_at DESC")
     if params[:tag]
       @posts = Post.tagged_with(params[:tag]).order("created_at DESC")
       @tag = params[:tag]
     else
       @posts = Post.order("created_at DESC")
     end
+    @user = User.new
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,4 +1,6 @@
 ArtupWeekend::Application.routes.draw do
+  root :to => 'posts#index'
+
   resources :events
 
   get 'tags/:tag', to: 'posts#index', as: :tag
@@ -17,11 +19,6 @@ ArtupWeekend::Application.routes.draw do
       get :vote_down
     end
   end
-
-  get "welcome/index"
-  resources :email_subscriptions, only: [:new, :create, :index]
-
-  root :to => 'welcome#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

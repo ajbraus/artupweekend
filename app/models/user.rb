@@ -1,3 +1,11 @@
+class EmailValidator < ActiveModel::EachValidator
+  def validate_each(record, attribute, value)
+    unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+      record.errors[attribute] << (options[:message] || "is not an email")
+    end
+  end
+end
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -14,6 +22,7 @@ class User < ActiveRecord::Base
   has_many :comments
   belongs_to :event
   validates :name, :username, presence: true
+  validates :email, presence: true, email: true
 
   after_create :send_welcome
 
