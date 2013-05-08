@@ -65,19 +65,19 @@
             </li>            
             <% end %>
           </ul>
-          <div class="social-buttons">
-            <ul class="nav pull-right">
+          <div>
+            <ul class="nav pull-right social-buttons">
               <li><h4><%= link_to "t", "http://www.twitter.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
               <li><h4><%= link_to "f", "http://www.facebook.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
               <li><h4><%= link_to "g+", "https://plus.google.com/101596467391423937181", rel: "publisher" %>&nbsp;&nbsp;</h4></li>
               <li><h4><%= link_to "i", "http://instagram.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
               <li style="margin: 18px 0;">#artupweekend</li>
             </ul>
-          </div>
-          <div class="authentication">
-            <% if user_signed_in? %>
-              <%= current_user.username %> - <%= current_user.karma %> | <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
-            <% end %>
+            <div class="stats">
+              <% if user_signed_in? %>
+                <%= current_user.username %> - <%= current_user.karma %> | <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
+              <% end %>
+            </div>            
           </div>
         </div>
       </div>

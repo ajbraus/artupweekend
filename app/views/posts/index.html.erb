@@ -29,7 +29,7 @@
     <div class="span9">
       <h1 class="clear-both">Art It Up</h1>
       <div class="lead">the best place to share and find collaborative art online</div>
-      <ul>
+      <ul class="posts">
       <% @posts.each do |post| %>
         <li class="clear-both post">
           <div class="row-fluid post-item">
@@ -53,7 +53,7 @@
             <%= link_to post do %>
             <div class="span10">
               <h4><%= post.title %></h4>
-              <div class="muted"><%= auto_link(post.short_body) %></div>
+              <div class="muted medium"><%= auto_link(post.short_body) %></div>
             </div>
             <div class="small pull-right">
               <%= post.nice_created_at %>
@@ -70,7 +70,7 @@
     <div class="span3">
       <div class="authentication">
         <% if user_signed_in? %>
-          <%= link_to 'New Post', new_post_path, class:'btn btn-info pull-left' %>
+          <%= link_to 'New Post', new_post_path, class:'btn btn-large btn-warning pull-left' %>
         <% else %>
           <%= link_to "Sign Up", new_registration_path(:user) %> | <%= link_to "Art In", new_session_path(:user) %>
         <% end %>

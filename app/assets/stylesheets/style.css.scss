@@ -173,6 +173,10 @@ color: #FF745E !important;
 	font-size:12px;
 }
 
+.medium {
+	font-size: 16px;
+}
+
 ul, li {
 	list-style: none;
 }
@@ -247,6 +251,10 @@ blockquote {
 	margin-top: 15px;
 }
 
+.posts {
+	margin-left: 0;
+}
+
 .authentication {
 margin-bottom: 55px;
 }
@@ -260,6 +268,11 @@ margin-bottom: 55px;
 	position: relative;
 bottom: 49px;
 float: right;
+}
+
+.social-buttons {
+	position: relative;
+bottom: 10px;
 }
 
 .pitch {
@@ -287,4 +300,10 @@ border-top: 1px solid white;
 
 .black {
 	color:black;
+}
+
+.stats {
+	position: absolute;
+right: 18px;
+top: 36px;
 }
