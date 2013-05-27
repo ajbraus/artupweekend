@@ -55,44 +55,48 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=405417449557652";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    <div class="background" id="background">
-    </div>
-
-    <div id="navbarTop" class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <ul class="nav pull-left">
-            <li><%= link_to "Home", "/#home" %></li>
-            <li><%= link_to "How It Works", "/#how" %></li>
-            <li><%= link_to "Contact", "/#contact_us" %></li>
-            <% if false %>
-            <li><%= link_to "Blog", "http://artupweekend.blogspot.com/", class:"blog-link" %></li>
-            <li>
-              <%= link_to posts_path do %>
-                art it up <span class="orange">new!</span>
-              <% end %>
-            </li>            
-            <% end %>
-          </ul>
-          <div>
-            <ul class="nav pull-right social-buttons">
-              <li><h4><%= link_to "t", "http://www.twitter.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
-              <li><h4><%= link_to "f", "http://www.facebook.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
-              <li><h4><%= link_to "g+", "https://plus.google.com/101596467391423937181", rel: "publisher" %>&nbsp;&nbsp;</h4></li>
-              <li><h4><%= link_to "i", "http://instagram.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
-              <li style="margin: 18px 0;">#artupweekend</li>
-            </ul>
-            <div class="stats">
-              <% if user_signed_in? %>
-                <%= current_user.username %> - <%= current_user.karma %> | <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
-              <% end %>
-            </div>            
-          </div>
-        </div>
-      </div>
-    </div>
+    <ul class="nav pull-right social-buttons">
+      <li><h4><%= link_to "t", "http://www.twitter.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
+      <li><h4><%= link_to "f", "http://www.facebook.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
+      <li><h4><%= link_to "g+", "https://plus.google.com/101596467391423937181", rel: "publisher" %>&nbsp;&nbsp;</h4></li>
+      <li><h4><%= link_to "i", "http://instagram.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
+      <li style="margin: 18px 0;">#artupweekend</li>
+    </ul>
+    <div class="stats">
+      <% if user_signed_in? %>
+        <%= current_user.username %> - <%= current_user.karma %> | <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
+      <% end %>
+    </div>   
     <div class="main">
       <%= bootstrap_flash %>
+      <% if params[:controller] == "posts" && params[:action] == "index" %>
+        <div id="home" class="row home" style="background-image: url(<%= @background %>);">  
+          <div class="container">
+            <div class="row">
+              <h1>Artup Weekend</h1>
+              <div class="lead pull-right pitch">
+                Artup Weekend is a global network of passionate artists and cultural creatives on a mission to inspire, educate, and empower individuals, teams and communities. Come share ideas, collaborate, and create art.
+                <h3>Events</h3>
+                <% @events.each do |event| %>
+                  <div>
+                    <%= link_to event_path(event) do %>
+                      <%= event.name %> 
+                    <% end %>
+                      - <%= event.start_date %> <%= link_to "register ($30)", "http://artupweekendmadison.eventbrite.com/" %></a></div>
+                <% end %>
+                <div><a href="mailto:team@artupweekend.org?subject=I'm Intereseted in Hosting an Artup Weekend in My City">your city here . . .</a></div>     
+              </div>
+            </div>
+            <div class="social-shares">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-via="artupweekend" data-size="large" data-hashtags="artupweekend">Tweet</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+              <div class="fb-like" data-href="http://www.facebook.com/artupweekend" data-send="true" data-width="150" data-show-faces="true"></div>
+            </div>
+          </div>
+        </div>   
+      <% else %>
+        <h1><%= link_to "Artup Weekend", root_path %></h1>
+      <% end %>   
       <%= yield %>
       <footer>
         <div class='offset1 span11'>

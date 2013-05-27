@@ -8,30 +8,27 @@
 body {
 	padding:0;
 	font-family: Helvetica, lucida, sans-serif;
-	color: rgb(66, 66, 66);
-background-color: white;
-font-size: 20px !important;
-}
-
-div {
-		font-size: 26px;
-line-height: 26px;
+	font-size: 20px;
 }
 
 h1 {
 	font-size:80px;
 	line-height: 1;
-	margin-left:10px !important;
+	margin-left:10px;
 	padding-top: 30px;
 	padding-bottom: 50px;
 }
 
-h1,h2,h3,h4,h5 {
-	color: #FF745E !important;
+.alert {
+	margin-bottom: 0;
+}
+
+.home h1 {
+	color: white;
 }
 
 .row {
-	margin-left:0 !important;
+	margin-left:0;
 }
 
 #work {
@@ -60,9 +57,9 @@ border-color: #252525;
 }
 
 input[type=text], input[type=email], input[type=password],textarea {
-	border-radius:0 !important;
-	padding:20px !important;
-	font-size:25px !important;
+	border-radius:0;
+	padding:20px;
+	font-size:25px;
 	min-width:300px;
 }
 
@@ -71,34 +68,34 @@ input[type=text], input[type=email], input[type=password],textarea {
 }
 
 .navbar {
-	margin-bottom:0 !important;
-
+	margin-bottom:0;
 }
 
 .navbar .nav > li > a {
-padding: 16px !important;
+padding: 16px;
 }
 
 .navbar-inner {
-		border:none !important;
-	background:none !important;
-	background-color: #2a333c !important;
+		border:none;
+	background:none;
+	background-color: #2a333c;
 }
 
-#home {
-padding-top: 20px;
-background-color: #80D5ED;
-height: 360px;
-padding-bottom: 60px;
-	div {
-		color:rgb(105, 97, 97);
-		margin-left: 10px;
-	}
+.black-gradient {
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
 }
+
 
 	h1 {
-		font-size: 106px !important;
-line-height: 91px !important;
+		font-size: 106px;
+		line-height: 91px;
+		text-shadow: 1px 1px 5px rgba(150, 150, 150, 1);
 	}
 
 footer {
@@ -112,8 +109,8 @@ padding-top: 60px;
 }
 
 textarea {
-	height: 200px;
-	width: 450px;
+height: 200px;
+width: 70%;
 	padding:25px;
 	font-size: 20px;
 }
@@ -154,15 +151,15 @@ font-size: 16px;
 }
 
 .send-button {
-	margin: 10px 40px 60px 0 !important;
+	margin: 10px 40px 60px 0;
 }
 
 .navbar .nav>li>a {
-color: #FF745E !important;
+color: #FF745E;
 }
 
 .background-white {
-	background-color: white !important;
+	background-color: white;
 }
 
 .clear-both {
@@ -207,24 +204,24 @@ padding: 10px;
 width: 28px;
 font-size: 30px;
 float: left;
-min-height: 75px;
+min-height: 40px;
 }
 
 .vote-count {
-	float: left;
-position: relative;
-top: 35px;
-font-size: 38px;
-width:30px;
-text-align: right;
+float: left;
+padding: 25px 14px;
 }
 
 .post {
 border-bottom: 1px solid lightgrey;
 border-top: 1px solid lightgrey;
 	&:hover {
-		background:white;
+		background:lightgrey;
 	}
+}
+
+.post-content {
+	margin-top:10px;
 }
 
 .comment {
@@ -271,12 +268,21 @@ float: right;
 }
 
 .social-buttons {
-	position: relative;
-bottom: 10px;
+	padding: 10px;
+	background: white;
+	background: rgba(255,255,255,.9);
+}
+
+.social-buttons li {
+	margin-top: 7px;
+	float:left;
 }
 
 .pitch {
-	margin-right: 50px;
+margin-right: 50px;
+background: rgba(255,255,255,.9);
+color: black;
+padding: 10px;
 }
 
 .tags {
@@ -293,7 +299,6 @@ bottom: 10px;
 
 
 .how {
-	margin-top: 80px;
 padding-top: 50px;
 border-top: 1px solid white;
 }
@@ -303,7 +308,7 @@ border-top: 1px solid white;
 }
 
 .stats {
-	position: absolute;
-right: 18px;
-top: 36px;
+position: absolute;
+right: 28px;
+top: 52px;
 }

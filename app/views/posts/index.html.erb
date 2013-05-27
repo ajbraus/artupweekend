@@ -1,66 +1,44 @@
-<div id="home" class="row home">  
-  <div class="container">
-    <div class="row">
-      <h1>Artup Weekend</h1>
-      <div class="lead pull-right pitch">Artup Weekend is a global network of passionate artists and cultural creatives on a mission to inspire, educate, and empower individuals, teams and communities. Come share ideas, collaborate, and create art.</div>
-    </div>
-    <div class='row'>
-      <% @events.each do |event| %>
-        <div>
-          <%= link_to event_path(event) do %>
-            <%= event.name %> 
-          <% end %>
-            - <%= event.start_date %> <%= link_to "register ($30)", "http://artupweekendmadison.eventbrite.com/" %></a></div>
-      <% end %>
-      <div><a href="#contact_us">your city here . . .</a></div>
-    </div>
-    <div class="social-shares">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-via="artupweekend" data-size="large" data-hashtags="artupweekend">Tweet</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-      <div class="fb-like" data-href="http://www.facebook.com/artupweekend" data-send="true" data-width="150" data-show-faces="true"></div>
-    </div>
-  </div>
-</div>
 <div class="container-fluid">
       <% if @tag.present? %>
         <h1 class='tag-header'># <%= @tag  %></h1>
       <% end %>
   <div class="row-fluid posts-list">
     <div class="span9">
-      <h1 class="clear-both">Art It Up</h1>
-      <div class="lead">the best place to share and find collaborative art online</div>
+      <div class="lead">post, share, and find collaborative art</div>
       <ul class="posts">
       <% @posts.each do |post| %>
         <li class="clear-both post">
           <div class="row-fluid post-item">
             <div class="span2">
-            <div class="vote-count">
-              <%= post.plusminus %>
-            </div>
-            <div class="votes-post">
-              <% if user_signed_in? %>
-                <%= link_to vote_up_post_path(post) do %>
-                  <p><i class="icon-chevron-up <%= current_user.voted_for?(post) ? 'voted' : 'not-voted' %>"></i></p>
-                <% end %>
-                <% if user_signed_in? && current_user.karma > 100 %>
-                  <%= link_to vote_down_post_path(post) do %>
-                    <p><i class="icon-chevron-down <%= current_user.voted_against?(post) ? 'voted' : 'not-voted' %>"></i></p>
+              <div class="vote-count">
+                <%= post.plusminus %>
+              </div>
+              <div class="votes-post">
+                <% if user_signed_in? %>
+                  <%= link_to vote_up_post_path(post) do %>
+                    <p><i class="icon-chevron-up <%= current_user.voted_for?(post) ? 'voted' : 'not-voted' %>"></i></p>
+                  <% end %>
+                  <% if user_signed_in? && current_user.karma > 100 %>
+                    <%= link_to vote_down_post_path(post) do %>
+                      <p><i class="icon-chevron-down <%= current_user.voted_against?(post) ? 'voted' : 'not-voted' %>"></i></p>
+                    <% end %>
                   <% end %>
                 <% end %>
-              <% end %>
-            </div>
+              </div>
             </div>
             <%= link_to post do %>
-            <div class="span10">
-              <h4><%= post.title %></h4>
-              <div class="muted medium"><%= auto_link(post.short_body) %></div>
-            </div>
-            <div class="small pull-right">
-              <%= post.nice_created_at %>
-            </div>            
-            <div class="muted pull-right small">
-              <%= post.user.username %>
-            </div>
+              <div class="post-content">
+                <strong><%= post.title %></strong>
+                <div class="muted medium">
+                  <%= auto_link(post.short_body) %>
+                </div>
+                <div class="small pull-right">
+                  <%= post.nice_created_at %>
+                </div>            
+                <div class="muted pull-right small">
+                  <%= post.user.username %>
+                </div>
+              </div>
             <% end %>
           </div>
         </li>
@@ -108,7 +86,7 @@
 </div>
 
 <div id="contact_us" class="row contact_us">
-  <div class="clearfix contact">
+  <div class="clearfix contact container">
     <h1>Contact us</h1>
     <span class="black"> by clicking . . . 
     <a href="mailto:team@artupweekend.org">here</a></span>

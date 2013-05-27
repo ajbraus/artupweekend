@@ -23,6 +23,11 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   def index
+
+    backgrounds = ["/assets/skull.jpg", "/assets/starry.jpg", "/assets/glass.jpg", "/assets/horse.jpg", ]
+
+    @background = backgrounds.sample
+
     @events = Event.order("starts_at DESC")
     if params[:tag]
       @posts = Post.tagged_with(params[:tag]).order("created_at DESC").limit(10)
