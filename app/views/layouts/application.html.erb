@@ -55,55 +55,40 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=405417449557652";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    <ul class="nav pull-right social-buttons">
-      <li><h4><%= link_to "t", "http://www.twitter.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
-      <li><h4><%= link_to "f", "http://www.facebook.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
-      <li><h4><%= link_to "g+", "https://plus.google.com/101596467391423937181", rel: "publisher" %>&nbsp;&nbsp;</h4></li>
-      <li><h4><%= link_to "i", "http://instagram.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
-      <li style="margin: 18px 0;">#artupweekend</li>
-    </ul>
     <div class="stats">
       <% if user_signed_in? %>
         <%= current_user.username %> - <%= current_user.karma %> | <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
       <% end %>
     </div>   
-    <div class="main">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <a class="brand" href="/">Artup Weekend</a>
+          <ul class="nav">
+
+          </ul>
+          <ul class="nav pull-right">
+            <% if user_signed_in? %>
+              <%= link_to 'New Post', new_post_path, class:'btn btn-large btn-warning' %>
+            <% else %>
+              <li><h4><%= link_to "Join", new_registration_path(:user) %>&nbsp;&nbsp;</h4></li> 
+              <li><h4><%= link_to "Login", new_session_path(:user) %>&nbsp;&nbsp;|&nbsp;&nbsp;</h4></li>
+            <% end %>
+            <li><h4><%= link_to "t", "http://www.twitter.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
+            <li><h4><%= link_to "f", "http://www.facebook.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
+            <li><h4><%= link_to "g+", "https://plus.google.com/101596467391423937181", rel: "publisher" %>&nbsp;&nbsp;</h4></li>
+            <li><h4><%= link_to "i", "http://instagram.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
+            <li style="margin: 10px 0; color:white;text-shadow:none;">#artupweekend</li>
+          </ul>
+        </div>  
       <%= bootstrap_flash %>
-      <% if params[:controller] == "posts" && params[:action] == "index" %>
-        <div id="home" class="row home" style="background-image: url(<%= @background %>);">  
-          <div class="container">
-            <div class="row">
-              <h1>Artup Weekend</h1>
-              <div class="lead pull-right pitch">
-                Artup Weekend is a local event in your city or community where people form teams to create and propagate art. 
-                <h3>Events</h3>
-                <% @events.each do |event| %>
-                  <div>
-                    <%= link_to event_path(event) do %>
-                      <%= event.name %> 
-                    <% end %>
-                      - <%= event.date_range %> <%= link_to "register ($30)", "http://artupweekendmadison.eventbrite.com/" %></a></div>
-                <% end %>
-                <div><a href="mailto:team@artupweekend.org?subject=I'm Intereseted in Hosting an Artup Weekend in My City">your city here . . .</a></div>     
-                <div class="social-shares">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-via="artupweekend" data-size="large" data-hashtags="artupweekend">Tweet</a>
-                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                  <div class="fb-like" data-href="http://www.facebook.com/artupweekend" data-send="true" data-width="150" data-show-faces="true"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>   
-      <% else %>
-        <h1><%= link_to "Artup Weekend", root_path %></h1>
-      <% end %>   
+      <div class="container">
       <%= yield %>
+    </div>
       <footer>
         <div class='offset1 span11'>
           &#169; 2013 Artup Weekend
         </div>
       </footer>
-    </div> <!-- span9 -->
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

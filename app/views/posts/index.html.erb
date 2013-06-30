@@ -1,10 +1,30 @@
+<div class="hero">
+  <h1>Artup Weekend</h1>
+  <div class="lead">
+    Artup Weekend is a local event in your city or community where people form teams to create and propagate art. 
+    <h3>Events</h3>
+    <% @events.each do |event| %>
+      <div>
+        <%= link_to event_path(event) do %>
+          <%= event.name %> 
+        <% end %>
+          - <%= event.date_range %> <%= link_to "register ($30)", "http://www.kickstarter.com" %></a></div>
+    <% end %>
+    <div><a href="mailto:team@artupweekend.org?subject=I'm Intereseted in Hosting an Artup Weekend in My City">your city here . . .</a></div>     
+    <div class="social-shares">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="artupweekend" data-size="large" data-hashtags="artupweekend">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <div class="fb-like" data-href="http://www.facebook.com/artupweekend" data-send="true" data-width="150" data-show-faces="true"></div>
+    </div>
+  </div>
+</div>
 <div class="container-fluid">
       <% if @tag.present? %>
         <h1 class='tag-header'># <%= @tag  %></h1>
       <% end %>
   <div class="row-fluid posts-list">
     <div class="span9">
-      <div class="lead">post, share, and find collaborative art</div>
+      <div class="lead"><strong>Art it Up</strong> - Artup Weekend's blog - post, share, and find collaborative art</div>
       <ul class="posts">
       <% @posts.each do |post| %>
         <li class="clear-both post">
@@ -45,14 +65,7 @@
     <% end %>
     </ul>
     </div>
-    <div class="span3">
-      <div class="authentication">
-        <% if user_signed_in? %>
-          <%= link_to 'New Post', new_post_path, class:'btn btn-large btn-warning pull-left' %>
-        <% else %>
-          <%= link_to "Sign Up", new_registration_path(:user) %> | <%= link_to "Art In", new_session_path(:user) %>
-        <% end %>
-      </div>           
+    <div class="span3">         
       <div id="tag_cloud">
         <h3>Tags</h3>
         <% tag_cloud Post.tag_counts, %w[l] do |tag, css_class| %>
@@ -68,9 +81,9 @@
       <h1>How It Works</h1>
         <div>Creative people show up</div>
         <div>They pitch great ideas for works of art, kickstarters, and art businesses</div>
-        <div>Everyone gets <span><h2 style="display:inline;">5</h2></span> votes</div>
+        <div>Everyone gets <span><h2 style="display:inline;">3</h2></span> votes</div>
         <div>Everyone votes for projects they want to see made</div>
-        <div>Teams form around the top <span><h2 style="display:inline;">~25</h2></span> projects</div>
+        <div>Teams form around the <span><h2 style="display:inline;">top</h2></span> projects</div>
         <div>Funds for materials are available based on votes to those pieces</div>
       <blockquote>
         <span><h2 style="display:inline;">48</h2></span> hours later

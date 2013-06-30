@@ -1,12 +1,12 @@
 <div class="container-fluid">
   <div class="row-fluid posts-list">
-  	<div class="span3">
+  	<div class="span5">
 			<img src="<%= @event.img_url %>"/>
 		</div>
-		<div class="span3">
+		<div class="span7">
 			<h1><%= @event.name %> </h1>
 			<div class="lead">
-				<%= @event.start_date %> | <%= @event.location %>
+				<%= @event.start_date %> - <%= @event.end_date %> | <%= @event.location %>
 			</div>
 		</div>
 	</div>
