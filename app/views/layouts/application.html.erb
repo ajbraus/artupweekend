@@ -75,14 +75,14 @@
             <div class="row">
               <h1>Artup Weekend</h1>
               <div class="lead pull-right pitch">
-                Artup Weekend is a global network of passionate artists and cultural creatives on a mission to inspire, educate, and empower individuals, teams and communities. Come share ideas, collaborate, and create art.
+                Artup Weekend is a local event in your city or community where people form teams to create and propagate art. 
                 <h3>Events</h3>
                 <% @events.each do |event| %>
                   <div>
                     <%= link_to event_path(event) do %>
                       <%= event.name %> 
                     <% end %>
-                      - <%= event.start_date %> <%= link_to "register ($30)", "http://artupweekendmadison.eventbrite.com/" %></a></div>
+                      - <%= event.date_range %> <%= link_to "register ($30)", "http://artupweekendmadison.eventbrite.com/" %></a></div>
                 <% end %>
                 <div><a href="mailto:team@artupweekend.org?subject=I'm Intereseted in Hosting an Artup Weekend in My City">your city here . . .</a></div>     
                 <div class="social-shares">

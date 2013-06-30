@@ -10,4 +10,12 @@ class Event < ActiveRecord::Base
   def start_date
   	self.starts_at.strftime "%b %e"
   end
+
+  def end_date
+    (self.starts_at + 2.days).strftime "%b %e"
+  end
+
+  def date_range
+    self.start_date + " - " + self.end_date
+  end
 end
