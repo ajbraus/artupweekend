@@ -7,6 +7,9 @@ ArtupWeekend::Application.routes.draw do
   
   devise_for :users
 
+  resources :users, :only => [:show]
+  match 'users/:id' => 'users#show'
+
   resources :posts, path: "artitup" do
     resources :comments do
       member do

@@ -24,45 +24,11 @@
       <% end %>
   <div class="row-fluid posts-list">
     <div class="span9">
-      <div class="lead"><strong>Art it Up</strong> - Artup Weekend's blog - post, share, and find collaborative art</div>
+      <div class="lead"><strong>Art it Up</strong> - post, share, and find collaborative art</div>
       <ul class="posts">
       <% @posts.each do |post| %>
-        <li class="clear-both post">
-          <div class="row-fluid post-item">
-            <div class="span2">
-              <div class="vote-count">
-                <%= post.plusminus %>
-              </div>
-              <div class="votes-post">
-                <% if user_signed_in? %>
-                  <%= link_to vote_up_post_path(post) do %>
-                    <p><i class="icon-chevron-up <%= current_user.voted_for?(post) ? 'voted' : 'not-voted' %>"></i></p>
-                  <% end %>
-                  <% if user_signed_in? && current_user.karma > 100 %>
-                    <%= link_to vote_down_post_path(post) do %>
-                      <p><i class="icon-chevron-down <%= current_user.voted_against?(post) ? 'voted' : 'not-voted' %>"></i></p>
-                    <% end %>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-            <%= link_to post do %>
-              <div class="post-content">
-                <strong><%= post.title %></strong>
-                <div class="muted medium">
-                  <%= auto_link(post.short_body) %>
-                </div>
-                <div class="small pull-right">
-                  <%= post.nice_created_at %>
-                </div>            
-                <div class="muted pull-right small">
-                  <%= post.user.username %>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </li>
-    <% end %>
+        <%= render partial: 'post', locals: { :post => post } %>
+      <% end %>
     </ul>
     </div>
     <div class="span3">         
@@ -75,7 +41,7 @@
     </div>
   </div> 
 </div>
-<div id="how" class="row how">
+<div id="how" class="row hero">
   <div class="container">
     <div class="row">
       <h1>How It Works</h1>

@@ -1,0 +1,35 @@
+<li class="clear-both post">
+  <div class="row-fluid post-item">
+    <div class="span2">
+      <div class="vote-count">
+        <%= post.plusminus %>
+      </div>
+      <div class="votes-post">
+        <% if user_signed_in? %>
+          <%= link_to vote_up_post_path(post) do %>
+            <p><i class="icon-chevron-up <%= current_user.voted_for?(post) ? 'voted' : 'not-voted' %>"></i></p>
+          <% end %>
+          <% if user_signed_in? && current_user.karma > 100 %>
+            <%= link_to vote_down_post_path(post) do %>
+              <p><i class="icon-chevron-down <%= current_user.voted_against?(post) ? 'voted' : 'not-voted' %>"></i></p>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <%= link_to post do %>
+      <div class="post-content">
+        <strong><%= post.title %></strong>
+        <div class="muted medium">
+          <%= auto_link(post.short_body) %>
+        </div>
+        <div class="small pull-right">
+          <%= post.nice_created_at %>
+        </div>            
+        <div class="muted pull-right small">
+          <%= post.user.username %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</li>

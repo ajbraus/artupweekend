@@ -1,5 +1,15 @@
-Prizes
+add event registration
+  login/register user record
+  request event
+  create event
+  event show
 
+add attendees to events
+add mentors to events
+add sponsors to events
+
+
+Prizes
 
 Create materials for 
 	getting a venue
@@ -18,13 +28,7 @@ add email contact_us
 paginate posts
 paginate comments
 
-add event registration
-	login/register user record
-	request event
-	create event
-	event show
 
-add attendees to events
 
 
 
