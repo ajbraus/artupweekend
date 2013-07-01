@@ -29,7 +29,6 @@ h1 {
 }
 
 .row {
-	margin-left:0;
 }
 
 #work {
@@ -223,6 +222,7 @@ blockquote {
 .contact_us {
 	min-height: 260px;
 	background: white;
+	padding-left:5%;
 	label {
 		color:#696161;
 	}
@@ -312,4 +312,6 @@ top: 52px;
 .hero {
 	background:black;
 	color:white;
+	padding-left:5%;
+	padding-bottom:20px;
 }

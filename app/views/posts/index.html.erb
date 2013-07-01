@@ -18,56 +18,54 @@
     </div>
   </div>
 </div>
-<div class="container-fluid">
-      <% if @tag.present? %>
-        <h1 class='tag-header'># <%= @tag  %></h1>
-      <% end %>
-  <div class="row-fluid posts-list">
-    <div class="span9">
-      <div class="lead"><strong>Art it Up</strong> - post, share, and find collaborative art</div>
-      <ul class="posts">
-      <% @posts.each do |post| %>
-        <%= render partial: 'post', locals: { :post => post } %>
-      <% end %>
-    </ul>
-    </div>
-    <div class="span3">         
-      <div id="tag_cloud">
-        <h3>Tags</h3>
-        <% tag_cloud Post.tag_counts, %w[l] do |tag, css_class| %>
-          <%= link_to tag.name, tag_path(tag.name), class: "label" %>
-        <% end %>
+  <% if @tag.present? %>
+    <h1 class='tag-header'># <%= @tag  %></h1>
+  <% end %>
+  
+  <div class="span9">
+    <div class="posts-list">
+      <div class="lead">
+        <strong>Art it Up</strong> - post, share, and find collaborative art
       </div>
+      <ul class="posts">
+        <% @posts.each do |post| %>
+          <%= render partial: 'post', locals: { :post => post } %>
+        <% end %>
+      </ul>
     </div>
-  </div> 
-</div>
-<div id="how" class="row hero">
-  <div class="container">
-    <div class="row">
-      <h1>How It Works</h1>
-        <div>Creative people show up</div>
-        <div>They pitch great ideas for works of art, kickstarters, and art businesses</div>
-        <div>Everyone gets <span><h2 style="display:inline;">3</h2></span> votes</div>
-        <div>Everyone votes for projects they want to see made</div>
-        <div>Teams form around the <span><h2 style="display:inline;">top</h2></span> projects</div>
-        <div>Funds for materials are available based on votes to those pieces</div>
-      <blockquote>
-        <span><h2 style="display:inline;">48</h2></span> hours later
-      </blockquote>
-      <div>They pitch again what they did</div>
-      <div>Prizes are distributed and a gallery of the art begins.</div>
-      <hr>
-      <blockquote>
-        Total: 54 hours
-      </blockquote>
+  </div>
+  <div class="span3">         
+    <div id="tag_cloud">
+      <h3>Tags</h3>
+      <% tag_cloud Post.tag_counts, %w[l] do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: "label" %>
+      <% end %>
     </div>
   </div>
 </div>
+<div id="how" class="hero">
+  <div>
+    <h1>How It Works</h1>
+      <div>Creative people show up</div>
+      <div>They pitch great ideas for works of art, kickstarters, and art businesses</div>
+      <div>Everyone gets <span><h2 style="display:inline;">3</h2></span> votes</div>
+      <div>Everyone votes for projects they want to see made</div>
+      <div>Teams form around the <span><h2 style="display:inline;">top</h2></span> projects</div>
+      <div>Funds for materials are available based on votes to those pieces</div>
+    <blockquote>
+      <span><h2 style="display:inline;">48</h2></span> hours later
+    </blockquote>
+    <div>They pitch again what they did</div>
+    <div>Prizes are distributed and a gallery of the art begins.</div>
+    <hr>
+    <blockquote>
+      Total: 54 hours
+    </blockquote>
+  </div>
+</div>
 
-<div id="contact_us" class="row contact_us">
+<div id="contact_us" class="contact_us">
   <div class="clearfix contact container">
-    <h1>Contact us</h1>
-    <span class="black"> by clicking . . . 
-    <a href="mailto:team@artupweekend.org">here</a></span>
+    <a href="mailto:team@artupweekend.org"><h1>Contact us</h1></a>
   </div>
 </div>
