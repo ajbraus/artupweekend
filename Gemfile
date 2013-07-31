@@ -13,16 +13,14 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem 'coffeebeans'
 gem 'devise'
 gem 'thumbs_up'
-
 gem 'acts-as-taggable-on'
-
 gem 'sendgrid'
-
 gem 'friendly_id'
-
 gem "rails_autolink"
 
 gem "hike", "~> 1.2.2"
+
+gem 'newrelic_rpm'
 
 group :development do
 	gem 'pry'
