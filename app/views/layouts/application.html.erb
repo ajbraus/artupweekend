@@ -57,7 +57,7 @@
 }(document, 'script', 'facebook-jssdk'));</script>
       <div class="navbar navbar-inverse">
         <div class="navbar-inner">
-          <a class="brand" href="/">Artup Weekend</a>
+          <%= "<a class='brand' href='/'>Artup Weekend</a>" unless params[:action] == "index" %>
           <ul class="nav pull-right">
             <% if user_signed_in? %>
               <li><span><%= link_to 'New Article', new_post_path, class:'btn btn-warning' %></span>&nbsp;&nbsp;</li>
@@ -66,10 +66,12 @@
               <li><h4><%= link_to "Join", new_registration_path(:user) %>&nbsp;&nbsp;</h4></li> 
               <li><h4><%= link_to "Login", new_session_path(:user) %>&nbsp;&nbsp;|&nbsp;&nbsp;</h4></li>
             <% end %>
+            <li><h4><%= link_to "WTF?", faq_path %>&nbsp;&nbsp;|&nbsp;&nbsp;</h4></li>
             <li><h4><%= link_to "t", "http://www.twitter.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
             <li><h4><%= link_to "f", "http://www.facebook.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
-            <li><h4><%= link_to "g+", "https://plus.google.com/101596467391423937181", rel: "publisher" %>&nbsp;&nbsp;</h4></li>
             <li><h4><%= link_to "i", "http://instagram.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
+            <li><h4><%= link_to "g+", "https://plus.google.com/101596467391423937181", rel: "publisher" %></h4></li>
+            
             <li style="margin: 10px 0; color:white;text-shadow:none;">#artupweekend</li>
           </ul>
         </div>  
