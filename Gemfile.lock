@@ -64,6 +64,9 @@ GEM
     excon (0.20.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    font-awesome-sass-rails (3.0.2.2)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     friendly_id (4.0.9)
     heroku (2.37.2)
       heroku-api (~> 0.3.7)
@@ -193,6 +196,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   coffeebeans
   devise
+  font-awesome-sass-rails
   friendly_id
   heroku
   hike (~> 1.2.2)

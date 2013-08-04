@@ -2,6 +2,7 @@ ArtupWeekend::Application.routes.draw do
   root :to => 'posts#index'
 
   resources :events
+  match '/materials', :to => 'materials#index', :as => "materials"
 
   get 'tags/:tag', to: 'posts#index', as: :tag
   

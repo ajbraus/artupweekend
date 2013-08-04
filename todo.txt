@@ -1,12 +1,10 @@
-add event registration
-  login/register user record
-  request event
-  create event
-  event show
 
+edit event
+event has_many team_members - if team_member then show link to materials
 add attendees to events
 add mentors to events
 add sponsors to events
+has_many Prizes
 
 
 Prizes
