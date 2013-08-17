@@ -3,4 +3,5 @@ $(document).ready(function() {
     dateFormat: "dd-mm-yy", 
     minDate: new Date()
     });
+  $('.alert').delay(3000).fadeOut();
 });
