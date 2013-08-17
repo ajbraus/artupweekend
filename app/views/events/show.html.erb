@@ -1,9 +1,7 @@
 <div class="container">
-  <div class="row posts-list">
-  	<div class="span5 offset1">
-			<img src="<%= @event.img_url %>"/>
-		</div>
+  <div class="row">
 		<div class="span6">
+			<img src="<%= @event.img_url %>"/>
 			<h2><%= @event.name %> </h2>
 			<%= raw(youtube_embed(@event.video_url)) if @event.video_url.present? %>
 			<div class="lead">
@@ -14,3 +12,4 @@
 		</div>
 	</div>
 </div>
+

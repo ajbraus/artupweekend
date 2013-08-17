@@ -1,4 +1,5 @@
 <div class="hero clearfix">
+  <div class="container">
   <h1>Artup Weekend</h1>
   <h3 class="artist-maker-entrepreneur"><i class="icon-brush"></i>Artists &#8226; Makers &#8226; Entrepreneurs</h3>
   <div class="lead">
@@ -220,10 +221,13 @@
     <div class="fb-like" data-href="http://www.facebook.com/artupweekend" data-send="true" data-width="150" data-show-faces="true"></div>
   </div>
 </div>
+</div>
   <% if @tag.present? %>
     <h1 class='tag-header'># <%= @tag  %></h1>
   <% end %>
   
+  <div class="container">
+    <div class="row">
   <div class="span9">
     <div class="posts-list">
       <div class="lead">
@@ -245,8 +249,10 @@
     </div>
   </div>
 </div>
+</div>
+</div>
 <div id="how" class="hero">
-  <div>
+  <div class="container">
     <h1>How It Works</h1>
       <div>Creative people show up</div>
       <div>They pitch great ideas for works of art, kickstarters, and art businesses</div>

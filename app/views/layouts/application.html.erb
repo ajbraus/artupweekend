@@ -57,7 +57,9 @@
 }(document, 'script', 'facebook-jssdk'));</script>
       <div class="navbar navbar-inverse">
         <div class="navbar-inner">
-          <%= "<a class='brand' href='/'>Artup Weekend</a>" unless params[:action] == "index" %>
+          <% unless params[:action] == "index" %>
+            <a class='brand' href='/'>Artup Weekend</a>
+          <% end %>
           <ul class="nav pull-right">
             <% if user_signed_in? %>
               <li><span><%= link_to 'New Article', new_post_path, class:'btn btn-warning' %></span>&nbsp;&nbsp;</li>
@@ -75,10 +77,11 @@
             <li style="margin: 10px 0; color:white;text-shadow:none;">#artupweekend</li>
           </ul>
         </div>  
-      <%= bootstrap_flash %>
-      <div class="container">
+        <%= bootstrap_flash %>
+      </div>
+
       <%= yield %>
-    </div>
+
       <footer>
         <div class='offset1 span11'>
           &#169; 2013 Artup Weekend
