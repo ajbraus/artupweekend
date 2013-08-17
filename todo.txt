@@ -1,11 +1,13 @@
+make applications
 
 edit event
+event begins_on date
+
 event has_many team_members - if team_member then show link to materials
 add attendees to events
 add mentors to events
 add sponsors to events
-has_many Prizes
-
+has_many prizes
 
 Prizes
 
@@ -15,8 +17,6 @@ Create materials for
 	getting artists
 	getting luminaries
 
-after sign_up go to art it up page
-fix the extra comment that is there
 add social share buttons to individual art it up posts
 
 setup Sendgrid
@@ -28,10 +28,4 @@ paginate comments
 
 
 
-
-
 make more events
-
-require 'date'
-d = Date.parse("2013-06-14T18:00:00-05:00")
-Event.create(name:"Madison, WI", starts_at: d, location:"640 West Washington Traincar E - the hoos.in train", img_url:"http://www.pps.org/graphics/gpp/wisconsin_capitol_large", subdomain:"madison")

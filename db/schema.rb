@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130804185943) do
+ActiveRecord::Schema.define(:version => 20130817041818) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -33,6 +33,21 @@ ActiveRecord::Schema.define(:version => 20130804185943) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "event_applications", :force => true do |t|
+    t.string   "where"
+    t.text     "why"
+    t.text     "who"
+    t.text     "contributions"
+    t.string   "heard_of_us"
+    t.text     "goals"
+    t.string   "venue"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "event_applications", ["user_id"], :name => "index_event_applications_on_user_id"
 
   create_table "events", :force => true do |t|
     t.string   "name"

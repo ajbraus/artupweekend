@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   belongs_to :event
+  has_many :event_applications
   
   validates :name, :username, presence: true
   validates :username, uniqueness: true

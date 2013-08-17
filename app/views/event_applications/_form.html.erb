@@ -1,0 +1,45 @@
+<%= form_for(@event_application) do |f| %>
+  <% if @event_application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event_application.errors.count, "error") %> prohibited this event_application from being saved:</h2>
+
+      <ul>
+      <% @event_application.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :heard_of_us, "How Did You Hear About Artup Weekend?" %><br />
+    <%= f.text_field :heard_of_us %>
+  </div>
+  <div class="field">
+    <%= f.label :where, "Artup Weekend, _______________ (Which City?)" %><br />
+    <%= f.text_field :where %>
+  </div>
+  <div class="field">
+    <%= f.label :why, "Why Do You Want To Host An Artup Weekend?" %><br />
+    <%= f.text_area :why %>
+  </div>
+  <div class="field">
+    <%= f.label :who, "Describe Your Teammates" %><br />
+    <%= f.text_area :who %>
+  </div>
+  <div class="field">
+    <%= f.label :venue, "Do You Have A Venue? Which one?" %><br />
+    <%= f.text_field :venue %>
+  </div>
+  <div class="field">
+    <%= f.label :contributions, "What Can You and Your Team Contribute As A Part Of The Larger Artup Weekend Team And Community?" %><br />
+    <%= f.text_area :contributions %>
+  </div>
+  <div class="field">
+    <%= f.label :goals, "What Are Your Team's Goals For Your City's Artup Weekend?" %><br />
+    <%= f.text_area :goals %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", class:'btn btn-primary btn-large' %>
+  </div>
+<% end %>

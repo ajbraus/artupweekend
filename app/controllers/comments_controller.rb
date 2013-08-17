@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!
+  
   def vote_up
     begin
       current_user.vote_exclusively_for(@comment = Comment.find(params[:id]))

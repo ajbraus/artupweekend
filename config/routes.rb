@@ -1,4 +1,6 @@
 ArtupWeekend::Application.routes.draw do
+  resources :event_applications
+
   root :to => 'posts#index'
 
   resources :events
