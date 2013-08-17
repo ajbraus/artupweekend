@@ -58,10 +58,14 @@
       <div class="navbar navbar-inverse">
         <div class="navbar-inner">
           <% unless params[:action] == "index" %>
-            <a class='brand' href='/'>Artup Weekend</a>
+            <a class='brand' href='/'>Home</a>
           <% end %>
           <ul class="nav pull-right">
             <% if user_signed_in? %>
+              <li><span>
+                <%= link_to "Host", "https://docs.google.com/forms/d/1XWKMp7yv4XsXUQfY3bdHMUvoaqV7sVJud_cje4hSotM/viewform", class:"btn btn-primary" %>
+              </span>&nbsp;&nbsp;
+              </li>
               <li><span><%= link_to 'New Article', new_post_path, class:'btn btn-warning' %></span>&nbsp;&nbsp;</li>
               <li><h4><%= link_to "#{current_user.username}", user_path(current_user) %> - <%= current_user.karma %>&nbsp;&nbsp;<%= link_to "sign out", destroy_user_session_path, :method => :delete %>&nbsp;&nbsp;|&nbsp;&nbsp;</h4></li>
             <% else %>
@@ -74,10 +78,26 @@
             <li><h4><%= link_to "i", "http://instagram.com/artupweekend" %>&nbsp;&nbsp;</h4></li>
             <li><h4><%= link_to "g+", "https://plus.google.com/101596467391423937181", rel: "publisher" %></h4></li>
             
-            <li style="margin: 10px 0; color:white;text-shadow:none;">#artupweekend</li>
+            <li style="margin: 10px 0; color:white;text-shadow:none;">&nbsp;&nbsp;#artupweekend</li>
           </ul>
         </div>  
         <%= bootstrap_flash %>
+      </div>
+      <div class="hero clearfix">
+        <div class="container">
+          <h1>Artup Weekend</h1>
+          <div class="artist-maker-entrepreneur">
+            <h3><i class="icon-brush"></i>Artists &#8226; Makers &#8226; Entrepreneurs</h3>
+            <div class="lead">
+              Artup Weekend is a local event in your city or community where people form teams to create and propagate art. 
+            </div>
+          </div>
+          <div class="social-shares">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="artupweekend" data-size="large" data-hashtags="artupweekend">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            <div class="fb-like" data-href="http://www.facebook.com/artupweekend" data-send="true" data-width="150" data-show-faces="true"></div>
+          </div>
+        </div>
       </div>
 
       <%= yield %>

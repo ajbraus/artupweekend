@@ -1,23 +1,72 @@
-<div class="hero clearfix">
+  <% if @tag.present? %>
+    <h1 class='tag-header'># <%= @tag  %></h1>
+  <% end %>
+  
   <div class="container">
-  <h1>Artup Weekend</h1>
-  <h3 class="artist-maker-entrepreneur"><i class="icon-brush"></i>Artists &#8226; Makers &#8226; Entrepreneurs</h3>
-  <div class="lead">
-    Artup Weekend is a local event in your city or community where people form teams to create and propagate art. 
-  </div>
-  <div>
-    <h3>Events</h3>
-    <% @events.each do |event| %>
-      <div>
-        <%= link_to event_path(event) do %>
-          <%= event.name %> 
+    <div class="row">
+  <div class="span9">
+    <div class="posts-list">
+      <div class="lead">
+        <strong>Art it Up</strong> - post, share, and find collaborative art
+      </div>
+      <ul class="posts">
+        <% @posts.each do |post| %>
+          <%= render partial: 'post', locals: { :post => post } %>
         <% end %>
-          - <%= event.date_range %> - <%= link_to "Tickets are a reward through Kickstarter", "http://www.kickstarter.com/projects/94693526/artup-weekend-0" %></a></div>
-    <% end %>
+      </ul>
+    </div>
   </div>
-  <div>
-    <a href="https://docs.google.com/forms/d/1XWKMp7yv4XsXUQfY3bdHMUvoaqV7sVJud_cje4hSotM/viewform" class="btn btn-primary btn-large">Host your Own Artup Weekend</a>
-  </div>     
+  <div class="span3">         
+    <div id="tag_cloud">
+      <h3>Tags</h3>
+      <% tag_cloud Post.tag_counts, %w[l] do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: "label" %>
+      <% end %>
+    </div>
+    <hr>
+        <div>
+      <a href="https://docs.google.com/forms/d/1XWKMp7yv4XsXUQfY3bdHMUvoaqV7sVJud_cje4hSotM/viewform" class="btn btn-primary btn-block">Host Your Artup Weekend</a>
+    </div>     
+    <hr>
+    <div>
+      <h3>Events</h3>
+      <% @events.each do |event| %>
+        <div>
+          <%= link_to event_path(event) do %>
+            <%= event.name %> 
+          <% end %>
+            - <%= event.date_range %> - <%= link_to "Tickets are a reward through Kickstarter", "http://www.kickstarter.com/projects/94693526/artup-weekend-0" %></a></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div id="how" class="hero">
+  <div class="container">
+    <h1>How It Works</h1>
+      <div>Creative people show up</div>
+      <div>They pitch great ideas for works of art, kickstarters, and art businesses</div>
+      <div>Everyone gets <span><h2 style="display:inline;">3</h2></span> votes</div>
+      <div>Everyone votes for projects they want to see made</div>
+      <div>Teams form around the <span><h2 style="display:inline;">top</h2></span> projects</div>
+      <div>Funds for materials are available based on votes to those pieces</div>
+    <blockquote>
+      <span><h2 style="display:inline;">48</h2></span> hours later
+    </blockquote>
+    <div>They pitch again what they did</div>
+    <div>Prizes are distributed and a gallery of the art begins.</div>
+    <hr>
+    <blockquote>
+      Total: 54 hours
+    </blockquote>
+  </div>
+</div>
+
+<div id="contact_us" class="contact_us">
+  <div class="clearfix contact container">
+    <a href="mailto:team@artupweekend.org"><h1>Contact us</h1></a>
+  </div>
   <div class="pull-left">
     <!-- Begin MailChimp Signup Form -->
     <link href="http://cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
@@ -37,7 +86,7 @@
       <div id="mce-responses" class="clear">
         <div class="response" id="mce-error-response" style="display:none"></div>
         <div class="response" id="mce-success-response" style="display:none"></div>
-      </div>  <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+      </div>  <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary btn-large"></div>
     </form>
     </div>
     <script type="text/javascript">
@@ -215,65 +264,4 @@
     <!--End mc_embed_signup-->
   </div>
 
-  <div class="social-shares">
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="artupweekend" data-size="large" data-hashtags="artupweekend">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <div class="fb-like" data-href="http://www.facebook.com/artupweekend" data-send="true" data-width="150" data-show-faces="true"></div>
-  </div>
-</div>
-</div>
-  <% if @tag.present? %>
-    <h1 class='tag-header'># <%= @tag  %></h1>
-  <% end %>
-  
-  <div class="container">
-    <div class="row">
-  <div class="span9">
-    <div class="posts-list">
-      <div class="lead">
-        <strong>Art it Up</strong> - post, share, and find collaborative art
-      </div>
-      <ul class="posts">
-        <% @posts.each do |post| %>
-          <%= render partial: 'post', locals: { :post => post } %>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-  <div class="span3">         
-    <div id="tag_cloud">
-      <h3>Tags</h3>
-      <% tag_cloud Post.tag_counts, %w[l] do |tag, css_class| %>
-        <%= link_to tag.name, tag_path(tag.name), class: "label" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<div id="how" class="hero">
-  <div class="container">
-    <h1>How It Works</h1>
-      <div>Creative people show up</div>
-      <div>They pitch great ideas for works of art, kickstarters, and art businesses</div>
-      <div>Everyone gets <span><h2 style="display:inline;">3</h2></span> votes</div>
-      <div>Everyone votes for projects they want to see made</div>
-      <div>Teams form around the <span><h2 style="display:inline;">top</h2></span> projects</div>
-      <div>Funds for materials are available based on votes to those pieces</div>
-    <blockquote>
-      <span><h2 style="display:inline;">48</h2></span> hours later
-    </blockquote>
-    <div>They pitch again what they did</div>
-    <div>Prizes are distributed and a gallery of the art begins.</div>
-    <hr>
-    <blockquote>
-      Total: 54 hours
-    </blockquote>
-  </div>
-</div>
-
-<div id="contact_us" class="contact_us">
-  <div class="clearfix contact container">
-    <a href="mailto:team@artupweekend.org"><h1>Contact us</h1></a>
-  </div>
 </div>
