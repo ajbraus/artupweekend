@@ -1,14 +1,26 @@
+  <div class="hero clearfix">
+    <div class="container">
+      <h1>Artup Weekend</h1>
+      <div class="artist-maker-entrepreneur">
+        <h3><i class="icon-brush"></i></h3>
+        <div class="lead">
+          Artup Weekend is where people create and propagate art.
+        </div>
+      </div>
+      <div class="social-shares">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="artupweekend" data-size="large" data-hashtags="artupweekend">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <div class="fb-like" data-href="http://www.facebook.com/artupweekend" data-send="true" data-width="150" data-show-faces="true"></div>
+      </div>
+    </div>
+  </div>
   <% if @tag.present? %>
     <h1 class='tag-header'># <%= @tag  %></h1>
   <% end %>
-  
   <div class="container">
     <div class="row">
   <div class="span9">
     <div class="posts-list">
-      <div class="lead">
-        <strong>Art it Up</strong> - post, share, and find collaborative art
-      </div>
       <ul class="posts">
         <% @posts.each do |post| %>
           <%= render partial: 'post', locals: { :post => post } %>

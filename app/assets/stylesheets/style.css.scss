@@ -80,7 +80,7 @@ input[type=text], input[type=email], input[type=password],textarea {
 	background: black;
 	background-color: black !important;
 	border: none;
-	background-image:none;
+	background-image:none !important;
 }
 
 	h1 {
@@ -306,6 +306,9 @@ top: 52px;
 }
 
 .brand {
+	font-family: helvetica;
+	font-size:30px !important;
+	font-style: bold;
 	color:white !important;
 }
 

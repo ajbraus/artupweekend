@@ -1,4 +1,5 @@
-make applications
+Make admin to review event_applications
+send email when new event_application created
 
 edit event
 event begins_on date
