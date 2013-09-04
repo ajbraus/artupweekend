@@ -3,7 +3,7 @@ class MaterialsController < ApplicationController
   end
 
   def faq
-
+    @events = Event.order("starts_at DESC")
   end
 
   def mentors

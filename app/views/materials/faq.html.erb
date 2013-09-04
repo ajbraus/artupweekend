@@ -1,75 +1,102 @@
 <div class="container">
-  <br>
-  <ul class="thumbnails">
-    <li class="thumbnail">
-      <div class="caption">
-        <h3>What is Artup Weekend?</h3>
-        <div>
-          <p>
-            Artup Weekend is a local event where people create and propagate art and art objects.
-          </p>
-        </div>
-      </div>
-    </li>
-    <li class="thumbnail">
-      <div class="caption">
-        <h3>Do I have to be an artist to attend?</h3>
-        <div class="fieldset-content">
-          <p>
-            NO! In fact, Artup Weekend was created by three people, an <strong>Entrepreneur</strong>, another an <strong>Artist</strong>, and a <strong>Maker</strong>. We think that the most amazing art, fun, and products come from mixing these three types of people.
-          </p>
-        </div>
-      </div>
-    </li>
-    <li class="thumbnail">
-      <div class="caption">
-        <h3>What do you mean "Art"?</h3>
-        <div class="fieldset-content">
-          <p>
-            Try us. We accept all kinds of art and artists from painters, actors, designers, sculptors, dancers, musicians, founders, digital artists, glass blowers, tatoo artists, singers, photographers, etc.
-          </p>
-        </div>
-      </div>
-    </li>
-    <li class="thumbnail">
-      <div class="caption">
-        <h3>What gives? Why should makers, artists and entrepreneurs work together?</h3>
-        <div class="fieldset-content">
-          <p>
-            Makers are masters of technology, the emergent medium of the day; artists are so creative they ; and entrepreneurs . 
-          </p>
-        </div>
-      </div>
-    </li>
-    <li class="thumbnail">
-      <div class="caption">
-        <h3>Can I make money from what I make?</h3>
-        <div class="fieldset-content">
-          <p>
-            Sure! Pitch any idea you like for art or an art object. If it is saleable, great. Be sure to set expectations with your team so everyone is clear.
-          </p>
-        </div>
-      </div>
-    </li>
-    <li class="thumbnail">
-      <div class="caption">
-        <h3>Are there prizes?</h3>
-        <div class="fieldset-content">
-          <p>
-            Each set of city organizers develops their own set of prizes and possiblities for their Artup Weekend, so get in touch with your organizer, or if your thinking to become the organizer, start brainstorming what you could give away. We've seen a lot of things including cash prizes, gallery space, studio space, and surprises.
-          </p>
-        </div>
-      </div>
-    </li>
-    <li class="thumbnail">
-      <div class="caption">
-        <h3>How can I host my own Artup Weekend in my city?</h3>
-        <div class="fieldset-content">
-          <p>
-            Its easy and fun and can really boost your career (artistic or otherwise!). First, float the idea around to a few leaders who might want to join your team and a few venues. Once you have a team and a few ideas for venues, <%= link_to "fill out an application", new_event_application_path %> and we'll get back to you lickity-split.
-          </p>
-        </div>
-      </div>
-    </li>
-  </ul>
+  <div class="row">
+    <div class="span9">
+      <br>
+      <ul class="thumbnails">
+        <li class="thumbnail">
+          <div class="caption">
+            <h3>What is Artup Weekend?</h3>
+            <div>
+              <p>
+                Artup Weekend is a local event where people create and propagate art and art objects.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="thumbnail">
+          <div class="caption">
+            <h3>Do I have to be an artist to attend?</h3>
+            <div class="fieldset-content">
+              <p>
+                NO! In fact, Artup Weekend was created by three people, an <strong>Entrepreneur</strong>, another an <strong>Artist</strong>, and a <strong>Maker</strong>. We think that the most amazing art, fun, and products come from mixing these three types of people.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="thumbnail">
+          <div class="caption">
+            <h3>What do you mean "Art"?</h3>
+            <div class="fieldset-content">
+              <p>
+                Try us. We accept all kinds of art and artists from painters, actors, designers, sculptors, dancers, musicians, founders, digital artists, glass blowers, tatoo artists, singers, photographers, etc.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="thumbnail">
+          <div class="caption">
+            <h3>What gives? Why should makers, artists and entrepreneurs work together?</h3>
+            <div class="fieldset-content">
+              <p>
+                Makers are masters of technology, the emergent medium of the day; artists are so creative they ; and entrepreneurs . 
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="thumbnail">
+          <div class="caption">
+            <h3>Can I make money from what I make?</h3>
+            <div class="fieldset-content">
+              <p>
+                Sure! Pitch any idea you like for art or an art object. If it is saleable, great. Be sure to set expectations with your team so everyone is clear.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="thumbnail">
+          <div class="caption">
+            <h3>Are there prizes?</h3>
+            <div class="fieldset-content">
+              <p>
+                Each set of city organizers develops their own set of prizes and possiblities for their Artup Weekend, so get in touch with your organizer, or if your thinking to become the organizer, start brainstorming what you could give away. We've seen a lot of things including cash prizes, gallery space, studio space, and surprises.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="thumbnail">
+          <div class="caption">
+            <h3>How can I host my own Artup Weekend in my city?</h3>
+            <div class="fieldset-content">
+              <p>
+                Its easy and fun and can really boost your career (artistic or otherwise!). First, float the idea around to a few leaders who might want to join your team and a few venues. Once you have a team and a few ideas for venues, <%= link_to "fill out an application", new_event_application_path %> and we'll get back to you lickity-split.
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+     <div class="span3">         
+       <div id="tag_cloud">
+         <h3>Tags</h3>
+         <% tag_cloud Post.tag_counts, %w[l] do |tag, css_class| %>
+           <%= link_to tag.name, tag_path(tag.name), class: "label" %>
+         <% end %>
+       </div>
+       <hr>
+           <div>
+         <%= link_to "Host Your Artup Weekend", new_event_application_path, class:"btn btn-primary" %>
+       </div>     
+       <hr>
+       <div>
+         <h3>Events</h3>
+         <% @events.each do |event| %>
+           <div>
+             <%= link_to event_path(event) do %>
+               <%= event.name %> 
+             <% end %>
+               - <%= event.date_range %> - <%= link_to "Tickets are a reward through Kickstarter", "http://www.kickstarter.com/projects/94693526/artup-weekend-0" %></a></div>
+         <% end %>
+       </div>
+     </div>
+  </div>
 </div>
