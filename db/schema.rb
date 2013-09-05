@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130905145938) do
+ActiveRecord::Schema.define(:version => 20130905151330) do
 
   create_table "attendees", :force => true do |t|
     t.integer "user_id"
@@ -79,6 +79,15 @@ ActiveRecord::Schema.define(:version => 20130905145938) do
 
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
 
+  create_table "prizes", :force => true do |t|
+    t.string   "title"
+    t.integer  "event_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "prizes", ["event_id"], :name => "index_prizes_on_event_id"
+
   create_table "rsvps", :force => true do |t|
     t.integer  "guest_id"
     t.integer  "event_id"
@@ -129,6 +138,7 @@ ActiveRecord::Schema.define(:version => 20130905145938) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.boolean  "admin",                  :default => false
+    t.boolean  "teammate",               :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

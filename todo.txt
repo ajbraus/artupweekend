@@ -1,16 +1,21 @@
-Make admin to review event_applications
-send email when new event_application created
+DONE Make admin to review event_applications
+DONE send email when new event_application created
 
-edit event
+add delayed job
+
+new event button for admins
+autocomplete on users names to set organizer
+edit event for organizers
 event begins_on date
 
-event has_many team_members - if team_member then show link to materials
-add attendees to events
-add mentors to events
-add sponsors to events
-has_many prizes
+organizer ->
+  add prize
+  add sponsor
+  invite to organizer
+  invite to mentor
 
-Prizes
+Access to materials if current_user.teammate?
+set teamate bool upon creating volunteer
 
 Create materials for 
 	getting a venue
@@ -30,3 +35,10 @@ paginate comments
 
 
 make more events
+
+
+DONE event has_many team_members - if team_member then show link to materials
+DONE add attendees to events
+DONE add mentors to events
+DONE add sponsors to events
+DONE has_many prizes

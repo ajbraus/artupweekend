@@ -5,8 +5,14 @@ class Notifier < ActionMailer::Base
 
   def welcome(user)
     @user = user
-    mail to: user.email, subject: "A Community of Artists - Artup Weekend"
+    mail to: user.email, subject: "Makers, Artists, & Entrepreneurs - UNITE!"
     # rescue => ex
     # Airbrake.notify(ex)
+  end
+
+  def event_application_recieved(user, application)
+    @user = user
+    @application = application
+    mail to: user.email, subject: "We Recieved Your Application to Oraganize an Artup Weekend"
   end
 end

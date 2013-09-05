@@ -9,6 +9,7 @@ class Event < ActiveRecord::Base
   has_many :organizers, through: :volunteers, source: :teammate, conditions: { organizer: true }
 
   has_many :sponsors
+  has_many :prizes
 
   validates :location, :name, presence: true
   
