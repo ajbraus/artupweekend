@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130817041818) do
+ActiveRecord::Schema.define(:version => 20130905145938) do
+
+  create_table "attendees", :force => true do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+  end
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -74,6 +79,23 @@ ActiveRecord::Schema.define(:version => 20130817041818) do
 
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
 
+  create_table "rsvps", :force => true do |t|
+    t.integer  "guest_id"
+    t.integer  "event_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "sponsors", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.integer  "event_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sponsors", ["event_id"], :name => "index_sponsors_on_event_id"
+
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -92,8 +114,8 @@ ActiveRecord::Schema.define(:version => 20130817041818) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "username"
     t.string   "name"
     t.string   "reset_password_token"
@@ -104,13 +126,22 @@ ActiveRecord::Schema.define(:version => 20130817041818) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.boolean  "admin",                  :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true
+
+  create_table "volunteers", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "teammate_id"
+    t.boolean  "organizer",   :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
 
   create_table "votes", :force => true do |t|
     t.boolean  "vote",          :default => false, :null => false

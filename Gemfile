@@ -17,7 +17,10 @@ gem 'thumbs_up'
 gem 'acts-as-taggable-on'
 gem 'sendgrid'
 gem 'friendly_id'
-gem "rails_autolink"
+
+gem "rails_autolink", "~> 1.0.9"
+gem "paperclip", "~> 3.0"
+gem 'aws-sdk', '~> 1.3.4'
 
 gem "hike", "~> 1.2.2"
 

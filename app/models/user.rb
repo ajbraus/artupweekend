@@ -22,6 +22,15 @@ class User < ActiveRecord::Base
   has_many :comments
   belongs_to :event
   has_many :event_applications
+
+  has_many :rsvps, foreign_key: "guest_id", dependent: :destroy
+  has_many :plans, through: :rsvps, source: :event
+
+  has_many :volunteers, foreign_key: "teammate_id", dependent: :destroy
+  has_many :volunteered_events, through: :volunteers, source: :event
+
+  has_many :commitments, foreign_key: "committed_user_id", dependent: :destroy
+  has_many :committed_tos, through: :commitments, source: :commitment
   
   validates :name, :username, presence: true
   validates :username, uniqueness: true
@@ -35,5 +44,13 @@ class User < ActiveRecord::Base
 
   def first_name
     self.name.split(' ')[0]
+  end
+
+  def rsvp!(event)
+    rsvp = self.rsvps.create(event_id: event.id)
+  end
+
+  def volunteer!(event, leader)
+    volunteer = self.volunteers.create(event_id: event.id, organizer: leader)
   end
 end

@@ -14,7 +14,40 @@
 		</div>
 	</div>
 	<div class="row">
-
+		<div class="span6">
+			<h4>Organizers</h4>
+			<ul>
+				<% @event.organizers.each do |o| %>
+					<li><%= o.first_name %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="span6">
+			<h4>Sponsors</h4>
+			<ul>
+				<% @event.sponsors.each do |s| %>
+					<li><%= link_to s.name, s.url %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span6">
+			<h4>Mentors/Volunteers</h4>
+			<ul>
+				<% @event.teammates.each do |o| %>
+					<li><%= o.first_name %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="span6">
+			<h4>Atteendees</h4>
+			<ul>
+				<% @event.attendees.each do |s| %>
+					<li><%= link_to s.name, user_path(s) %></li>
+				<% end %>
+			</ul>
+		</div>
 	</div>
 </div>
 

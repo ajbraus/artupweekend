@@ -4,7 +4,11 @@ class EventApplicationsController < ApplicationController
   # GET /event_applications
   # GET /event_applications.json
   def index
-    @event_applications = EventApplication.all
+    if current_user.admin?
+      @event_applications = EventApplication.all
+    else
+      redirect_to root_path, notice: "Oops, here you go!"
+    end
 
     respond_to do |format|
       format.html # index.html.erb
