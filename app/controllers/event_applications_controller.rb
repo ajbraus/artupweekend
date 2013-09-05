@@ -6,13 +6,12 @@ class EventApplicationsController < ApplicationController
   def index
     if current_user.admin?
       @event_applications = EventApplication.all
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @event_applications }
+      end
     else
       redirect_to root_path, notice: "Oops, here you go!"
-    end
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @event_applications }
     end
   end
 

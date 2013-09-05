@@ -26,17 +26,24 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.json
   def new
-    @event = Event.new
+    if current_user.admin?
+      @event = Event.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @event }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @event }
+      end
+    else
+      redirect_to root_path, notice: "Oops, here you go!"
     end
   end
 
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+    unless @event.organizers.include?(current_user)
+      redirect_to root_path, notice: "Oops, here you go!"
+    end
   end
 
   # POST /events
