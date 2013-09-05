@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
 
   has_many :volunteers, dependent: :destroy
   has_many :teammates, through: :volunteers, source: :teammate
-  has_many :organizers, through: :volunteers, source: :teammate, conditions: { organizer: true }
+  has_many :organizers, through: :volunteers, source: :teammate, conditions: { "volunteers.organizer" => true }
 
   has_many :sponsors
   has_many :prizes

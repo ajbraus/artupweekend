@@ -43,7 +43,7 @@
 		<div class="span6">
 			<h4>Atteendees</h4>
 			<ul>
-				<% @event.attendees.each do |s| %>
+				<% @event.guests.each do |s| %>
 					<li><%= link_to s.name, user_path(s) %></li>
 				<% end %>
 			</ul>

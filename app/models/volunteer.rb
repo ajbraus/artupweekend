@@ -1,4 +1,4 @@
-class Volunteers < ActiveRecord::Base
+class Volunteer < ActiveRecord::Base
   attr_accessible :event_id, :teammate_id, :organizer
 
   belongs_to :teammate, class_name: "User"

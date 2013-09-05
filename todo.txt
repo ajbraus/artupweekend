@@ -19,9 +19,12 @@ set teamate bool upon creating volunteer
 
 Create materials for 
 	getting a venue
-	getting sponsors
+	getting sponsors (fundraising)
+  how to do your indiegogo campaign
 	getting artists
 	getting luminaries
+
+Explain the 25% of donations going to Artup
 
 add social share buttons to individual art it up posts
 
