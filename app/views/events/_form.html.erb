@@ -13,27 +13,19 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :autofocus => true %>
   </div>
   <div class="field">
     <%= f.label :starts_at %><br />
-    <%= f.text_field :starts_at %>
+    <%= f.text_field :starts_at, class:"datepicker" %>
   </div>
   <div class="field">
     <%= f.label :img_url %><br />
     <%= f.text_field :img_url %>
   </div>
   <div class="field">
-    <%= f.label :location %><br />
+    <%= f.label :location, "Venue" %><br />
     <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :campaign_url %><br />
-    <%= f.text_field :campaign_url %>
-  </div>
-  <div class="field">
-    <%= f.label :video_url, "YouTube URL of Intro Video" %><br />
-    <%= f.text_field :video_url %>
   </div>
   <div class="actions">
     <%= f.submit %>

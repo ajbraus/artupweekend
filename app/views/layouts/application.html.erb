@@ -62,9 +62,15 @@
           <% end %>
           <ul class="nav pull-right">
             <% if user_signed_in? %>
-              <li><span>
-                <%= link_to "Host Your Artup Weekend", new_event_application_path, class:"btn btn-primary" %>
-              </span>&nbsp;&nbsp;
+              <li>
+                <span>
+                <% if current_user.admin? %>
+                  <%= link_to "New Event", new_event_path, class:"btn btn-primary" %>
+                <% else %>
+                  <%= link_to "Host Your Artup Weekend", new_event_application_path, class:"btn btn-primary" %>
+                <% end %>
+              </span>
+              &nbsp;&nbsp;
               </li>
               <li><span><%= link_to 'New Article', new_post_path, class:'btn btn-warning' %></span>&nbsp;&nbsp;</li>
               <li><h4><%= link_to "#{current_user.username}", user_path(current_user) %> - <%= current_user.karma %>&nbsp;&nbsp;<%= link_to "sign out", destroy_user_session_path, :method => :delete %>&nbsp;&nbsp;|&nbsp;&nbsp;</h4></li>
@@ -86,7 +92,7 @@
 
       <%= yield %>
 
-      <footer>
+      <footer class="footer">
         <div class='offset1 span11'>
           &#169; 2013 Artup Weekend
         </div>

@@ -1,18 +1,27 @@
-DONE Make admin to review event_applications
-DONE send email when new event_application created
 
-add delayed job
+event_application_recieved template
+add delayed job  
+setup Sendgrid
+add welcome email
+add email contact_us
+
 
 new event button for admins
 autocomplete on users names to set organizer
+jquery dateselect for begins_on
 edit event for organizers
-event begins_on date
+event begins_on method
 
 organizer ->
   add prize
   add sponsor
   invite to organizer
   invite to mentor
+  invite to participants
+  updates -> goes to all guests, teammates, sponsors 
+  comments (organizer can destroy)
+
+add DC event for Brian
 
 Access to materials if current_user.teammate?
 set teamate bool upon creating volunteer
@@ -24,20 +33,14 @@ Create materials for
 	getting artists
 	getting luminaries
 
-Explain the 25% of donations going to Artup
+Explain the 25% of donations going to Artup on application
+host splashpage
 
 add social share buttons to individual art it up posts
-
-setup Sendgrid
-add welcome email
-add email contact_us
+add sidebar to individual posts
 
 paginate posts
 paginate comments
-
-
-
-make more events
 
 
 DONE event has_many team_members - if team_member then show link to materials
@@ -45,3 +48,4 @@ DONE add attendees to events
 DONE add mentors to events
 DONE add sponsors to events
 DONE has_many prizes
+DONE Make admin to review event_applications
