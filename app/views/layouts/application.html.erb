@@ -47,71 +47,70 @@
 </script>
   </head>
   <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=405417449557652";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=405417449557652";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
-<nav class="navbar navbar-inverse" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <% unless params[:action] == "index" %>
-      <a class='navbar-brand' href='/'>Artup Weekend</a>
-    <% end %>
-  </div>
-
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
-        <li>
-          <% if current_user.admin? %>
-            <%= link_to "New Event", new_event_path, class:"btn btn-primary" %>
-          <% else %>
-            <%= link_to "Host Your Artup Weekend", new_event_application_path, class:"btn btn-primary" %>
-          <% end %>
-        </li>
-        <li><%= link_to 'New Article', new_post_path, class:'btn btn-warning' %></li>
-        <li><%= link_to "#{current_user.username} - #{current_user.karma}", user_path(current_user) %> </li>
-      <% else %>
-        <li><%= link_to "Join", new_registration_path(:user) %></li> 
-        <li><%= link_to "Login", new_session_path(:user) %></li>
-      <% end %>
-      <li><%= link_to "WTF?", faq_path %></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">#artupweekend <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><%= link_to "Twitter", "http://www.twitter.com/artupweekend", target:"_blank" %></li>
-          <li><%= link_to "Facebook", "http://www.facebook.com/artupweekend", target:"_blank" %></li>
-          <li><%= link_to "Instagram", "http://instagram.com/artupweekend", target:"_blank" %></li>
-          <li><%= link_to "Google+", "https://plus.google.com/101596467391423937181", rel: "publisher", target:"_blank" %></li>
-          <li class="divider"></li>
-          <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-        </ul>
-      </li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
-        <%= bootstrap_flash %>
+    <nav class="navbar navbar-inverse" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <% unless params[:action] == "index" %>
+          <a class='navbar-brand' href='/'>Artup Weekend</a>
+        <% end %>
       </div>
 
-      <%= yield %>
-
-      <footer class="footer">
-        <div class='col-sm-offset-1 col-sm-11'>
-          &#169; 2013 Artup Weekend
-        </div>
-      </footer>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li>
+              <span>
+                <% if current_user.admin? %>
+                  <%= link_to "New Event", new_event_path, class:"btn btn-primary" %>
+                <% else %>
+                  <%= link_to "Host Your Artup Weekend", new_event_application_path, class:"btn btn-primary" %>
+                <% end %>
+              </span>
+            </li>
+            <li><span><%= link_to 'New Article', new_post_path, class:'btn btn-warning' %></span></li>
+            <li><%= link_to "#{current_user.username} - #{current_user.karma}", user_path(current_user) %> </li>
+          <% else %>
+            <li><span><%= link_to "Join", new_registration_path(:user) %></span></li> 
+            <li><span><%= link_to "Login", new_session_path(:user) %></span></li>
+          <% end %>
+          <li><%= link_to "WTF?", faq_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">#artupweekend <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Twitter", "http://www.twitter.com/artupweekend", target:"_blank" %></li>
+              <li><%= link_to "Facebook", "http://www.facebook.com/artupweekend", target:"_blank" %></li>
+              <li><%= link_to "Instagram", "http://instagram.com/artupweekend", target:"_blank" %></li>
+              <li><%= link_to "Google+", "https://plus.google.com/101596467391423937181", rel: "publisher", target:"_blank" %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+    <%= bootstrap_flash %>
+    <%= yield %>
+    <footer class="footer">
+      <div class='col-sm-offset-1 col-sm-11'>
+        &#169; 2013 Artup Weekend
+      </div>
+    </footer>
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
