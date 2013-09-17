@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
   has_many :sponsors
   has_many :prizes
 
-  validates :location, :name, presence: true
+  validates :name, presence: true
   
   extend FriendlyId
   friendly_id :name, use: :slugged
