@@ -1,6 +1,6 @@
 <div class="container padding-top">
   <div class="row">
-		<div class="span6">
+		<div class="col-sm-6">
 			<img src="<%= @event.img_url %>"/>
 			<h2><%= @event.name %> </h2>
 			<div class="lead">
@@ -9,12 +9,12 @@
 				<%= link_to "Back Artup Weekend #{@event.slug.titleize}", @event.campaign_url, class:"btn btn-large btn-info", target: "_blank" %>
 			</div>
 		</div>
-		<div class="span6">
+		<div class="col-sm-6">
 			<%= raw(youtube_embed(@event.video_url)) if @event.video_url.present? %>
 		</div>
 	</div>
 	<div class="row">
-		<div class="span6">
+		<div class="col-sm-6">
 			<h4>Organizers</h4>
 			<ul>
 				<% @event.organizers.each do |o| %>
@@ -22,7 +22,7 @@
 				<% end %>
 			</ul>
 		</div>
-		<div class="span6">
+		<div class="col-sm-6">
 			<h4>Sponsors</h4>
 			<ul>
 				<% @event.sponsors.each do |s| %>
@@ -32,7 +32,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="span6">
+		<div class="col-sm-6">
 			<h4>Mentors/Volunteers</h4>
 			<ul>
 				<% @event.teammates.each do |o| %>
@@ -40,7 +40,7 @@
 				<% end %>
 			</ul>
 		</div>
-		<div class="span6">
+		<div class="col-sm-6">
 			<h4>Atteendees</h4>
 			<ul>
 				<% @event.guests.each do |s| %>

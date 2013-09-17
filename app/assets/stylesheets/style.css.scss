@@ -55,9 +55,6 @@ background-repeat: repeat-x;
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
 border-color: #252525;
 	text-align: center;
-	.span3 {
-		margin:0;
-	}
 }
 
 input[type=text], input[type=email], input[type=password],textarea {
@@ -83,6 +80,17 @@ input[type=text], input[type=email], input[type=password],textarea {
 	background-image:none !important;
 }
 
+.navbar-inverse {
+	background-color: black;
+border-color: black;
+border-radius: 0;
+}
+
+.navbar .btn {
+	position: relative;
+	top:10px;
+}
+
 	h1 {
 		font-size: 106px;
 		line-height: 91px;
@@ -100,10 +108,10 @@ padding-top: 60px;
 }
 
 textarea {
-height: 120px;
-width: 70%;
-	padding:25px;
-	font-size: 20px;
+height: 170px;
+width: 73%;
+padding: 25px;
+font-size: 20px;
 }
 
 .tag-line {

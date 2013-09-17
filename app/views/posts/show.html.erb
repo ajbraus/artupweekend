@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="span8 offset2">
+		<div class="col-sm-8 col-sm-offset-2">
 			<div class="vote-count">
 				<%= @post.plusminus %>
 			</div>
@@ -39,7 +39,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="span8 offset2 comment">
+		<div class="col-sm-8 col-sm-offset-2 comment">
 			<% if user_signed_in? %>
 				<%= render partial: "comments/form" %>
 			<% end %>
