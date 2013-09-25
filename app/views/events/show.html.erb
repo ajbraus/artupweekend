@@ -9,7 +9,7 @@
 			<div class="lead">
 				<div>Date: <strong><%= @event.start_date %> - <%= @event.end_date %> </strong></div>
 				<div>Venue: <strong><%= @event.location %></strong></div>
-				<%= link_to "Back Artup Weekend #{@event.slug.titleize}", @event.campaign_url, class:"btn btn-large btn-info", target: "_blank" %>
+				<%= link_to "Back Artup Weekend #{@event.slug.titleize}", @event.campaign_url, class:"btn btn-large btn-info", target: "_blank" if @event.campaign_url.present? %>
 			</div>
 		</div>
 		<div class="col-sm-6">

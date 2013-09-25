@@ -1,22 +1,18 @@
 add social share buttons to individual art it up posts
 
+organizer ->
+  projects (with picture/video)
+  add "official updates" to events
+  enter email of volunteer/mentor
+  enter email of organizer
+    if exists set as organizer and notify
+    if does not exist, notfiry
+    when registering, check email against all invites, delete invite and add as orgnizer for event
 
-autocomplete on users names to set organizer
 jquery dateselect for begins_on
-edit event for organizers
-event begins_on method
 
 add delayed job  
 
-organizer ->
-  projects (with picture/video)
-  comments (organizer can destroy)
-  updates -> goes to all guests, teammates, sponsors 
-
-  invite to organizer
-  invite to mentor
-  invite to participants
-  
 add DC event for Brian
 
 Access to materials if current_user.organizer?
@@ -44,3 +40,4 @@ DONE Make admin to review event_applications
   DONE add sponsor
 
 DONE add sidebar to individual posts
+DONE edit event for organizers
