@@ -16,9 +16,10 @@
       <% end %>
     </div>
   </div>
-  <%= link_to post do %>
     <div class="post-content">
+      <%= link_to post do %>
       <strong><%= post.title %></strong>
+      <% end %>
       <div class="muted medium">
         <%= auto_link(post.short_body) %>
       </div>
@@ -29,5 +30,4 @@
         <%= post.user.username %>
       </div>
     </div>
-  <% end %>
 </div>

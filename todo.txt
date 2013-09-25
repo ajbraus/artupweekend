@@ -13,6 +13,8 @@ jquery dateselect for begins_on
 
 add delayed job  
 
+Thank you for sponsoring artup weekend email
+
 add DC event for Brian
 
 Access to materials if current_user.organizer?

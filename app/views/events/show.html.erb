@@ -72,7 +72,8 @@
 					<p><%= f.hidden_field :event_id, value: @event.id %></p>
 					<div>* indicates required field</div>
 					<hr>
-					<div><%= f.submit class:"btn btn-success pull-right" %></div>
+					<div class="text-right"><%= f.submit class:"btn btn-success" %></div>
+					<div class='text-right muted'>This will send a "Thank You" email</div>
 				<% end %>
 				</div>
 			<% end %>
