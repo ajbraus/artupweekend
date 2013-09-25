@@ -17,11 +17,9 @@ organizer ->
   invite to mentor
   invite to participants
   
-  
 add DC event for Brian
 
-Access to materials if current_user.teammate?
-set teamate bool upon creating volunteer
+Access to materials if current_user.organizer?
 
 Create materials for 
 	getting a venue
@@ -30,8 +28,7 @@ Create materials for
 	getting artists
 	getting luminaries
 
-Explain the 25% of donations going to Artup on application
-host splashpage
+Explain the 30% of donations going to Artup on application
 
 add social share buttons to individual art it up posts
 add sidebar to individual posts

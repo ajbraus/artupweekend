@@ -1,6 +1,6 @@
 <div class="comment">
 	<div class="row-fluid">
-		<div class='span2'>
+		<div class='col-sm-2'>
 			<div class="vote-count">
 				<%= comment.plusminus %>
 			</div>
@@ -22,18 +22,20 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="muted small pull-right">
-		  <% if comment.user_id.present? %>
-		  	<%= comment.user.name %>
-		  	<% if user_signed_in? && comment.user == current_user %>
-					<%= link_to 'Edit', edit_post_comment_path([comment.post,comment]) %>
-				<% end %>
-		  <% else %>
-		  	anonymous
-		  <% end %>
-		</div>
-		<div class="little-grey small pull-right">
-			<%= comment.nice_created_at %>
+		<div class="col-sm-9">
+			<div class="muted small pull-right">
+			  <% if comment.user_id.present? %>
+			  	<%= comment.user.name %>
+			  	<% if user_signed_in? && comment.user == current_user %>
+						<%= link_to 'Edit', edit_post_comment_path([comment.post,comment]) %>
+					<% end %>
+			  <% else %>
+			  	anonymous
+			  <% end %>
+			</div>
+			<div class="little-grey small pull-right">
+				<%= comment.nice_created_at %>
+			</div>
 		</div>
 	</div>
 </div>

@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2">
+		<div class="col-sm-8">
 			<div class="vote-count">
 				<%= @post.plusminus %>
 			</div>
@@ -20,26 +20,22 @@
 				<%= @post.title %>
 			</h2>
 			<div class="lead"><%= auto_link(@post.body) %></div>
-			<div class="pull-right">
-			<% if user_signed_in? && current_user == @post.user %>
-			<%= link_to 'Edit', edit_post_path(@post), class:'btn btn-warning' %>
-			<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
-			<% end %>
-			</div>
 			<div class="muted small pull-right">
 				<%= @post.user.name %>
 			</div>			
-			<div class="small pull-right">
+			<p class="small text-right">
 				<%= @post.nice_created_at %>
-			</div>			
+			</p>
+			<p class="text-right">
+				<% if user_signed_in? && current_user == @post.user %>
+				<%= link_to 'Edit', edit_post_path(@post) %>
+				<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+				<% end %>
+			</p>
 
 			<div class="tags">
 					<%= raw @post.tag_list.map { |t| link_to t, tag_path(t), class:"label" }.join(' ') %>
 			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2 comment">
 			<% if user_signed_in? %>
 				<%= render partial: "comments/form" %>
 			<% end %>
@@ -47,6 +43,8 @@
 				<h5>comments</h5>
 				<%= render partial: "comments/show", collection: @post_comments, as: :comment %>
 			</div>
-		</div>			
+		</div>
+		<%= render "welcome/sidebar" %>
+		</div>
 	</div>
 </div>
