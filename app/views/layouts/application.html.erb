@@ -90,7 +90,7 @@
             <li><%= link_to "Login", new_session_path(:user) %></li>
           <% end %>
           <li><%= link_to "WTF?", faq_path %></li>
-          <% if current_user.admin? || current_user.is_organizer? %>
+          <% if user_signed_in? current_user.admin? || current_user.is_organizer? %>
             <li><%= link_to "Organizer Materials", materials_path %></li>
           <% end %>
           <li class="dropdown">
