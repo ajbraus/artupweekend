@@ -3,6 +3,9 @@
 		<div class="col-sm-6">
 			<img src="<%= @event.img_url %>"/>
 			<h2><%= @event.name %> </h2>
+			<% if @event.organizers.include?(current_user) || current_user.admin? %>
+				<%= link_to "edit", edit_event_path(@event) %>
+			<% end %>
 			<div class="lead">
 				<div>Date: <strong><%= @event.start_date %> - <%= @event.end_date %> </strong></div>
 				<div>Venue: <strong><%= @event.location %></strong></div>
@@ -30,15 +33,17 @@
 						<li><%= p.title %></li>
 					<% end %>
 				</ul>
-				<div class="clear-both well clearfix">
-					<h5>Add New Prize</h5>
-				<%= form_for @event.prizes.new do |f| %>
-					<p><%= f.text_field :title, placeholder:"Prize" %></p>
-					<p><%= f.hidden_field :event_id, value: @event.id %></p>
-					<hr>
-					<div><%= f.submit class:"btn btn-success pull-right" %></div>
+				<% if @event.organizers.include?(current_user) || current_user.admin? %>
+					<div class="clear-both well clearfix">
+						<h5>Add New Prize</h5>
+					<%= form_for @event.prizes.new do |f| %>
+						<p><%= f.text_field :title, placeholder:"Prize" %></p>
+						<p><%= f.hidden_field :event_id, value: @event.id %></p>
+						<hr>
+						<div><%= f.submit class:"btn btn-success pull-right" %></div>
+					<% end %>
+					</div>
 				<% end %>
-				</div>
 			</p>
 		</div>
 		<div class="col-sm-6">
@@ -54,7 +59,7 @@
 							</div>
 						</div>
 					<% end %>
-			<% if current_user.in?(@event.organizers) || current_user.admin? %>
+			<% if @event.organizers.include?(current_user) || current_user.admin? %>
 				<div class="clear-both well clearfix">
 					<h5>Add New Sponsor</h5>
 				<%= form_for @event.sponsors.new do |f| %>

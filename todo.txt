@@ -1,3 +1,6 @@
+add social share buttons to individual art it up posts
+
+
 autocomplete on users names to set organizer
 jquery dateselect for begins_on
 edit event for organizers
@@ -5,11 +8,8 @@ event begins_on method
 
 add delayed job  
 
-
-
 organizer ->
-  DONE add prize
-  DONE add sponsor
+  projects (with picture/video)
   comments (organizer can destroy)
   updates -> goes to all guests, teammates, sponsors 
 
@@ -30,9 +30,6 @@ Create materials for
 
 Explain the 30% of donations going to Artup on application
 
-add social share buttons to individual art it up posts
-add sidebar to individual posts
-
 paginate posts
 paginate comments
 
@@ -43,3 +40,7 @@ DONE add mentors to events
 DONE add sponsors to events
 DONE has_many prizes
 DONE Make admin to review event_applications
+  DONE add prize
+  DONE add sponsor
+
+DONE add sidebar to individual posts

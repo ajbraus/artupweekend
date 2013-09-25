@@ -10,8 +10,17 @@
           Artup Weekend is a weekend-long art create-a-thon
         </div>
         <div class="pull-left">
-          <h3>Upcomming Events</h3>
-          <% @events.each do |event| %>
+          <h4>Upcoming Events</h4>
+          <% @upcoming_events.each do |event| %>
+            <div class="small">
+              <%= link_to event_path(event) do %>
+                <%= event.name %> 
+              <% end %>
+                - <%= event.date_range %></a>
+            </div>
+          <% end %>
+          <h5>Past Events</h5>
+          <% @past_events.each do |event| %>
             <div class="small">
               <%= link_to event_path(event) do %>
                 <%= event.name %> 

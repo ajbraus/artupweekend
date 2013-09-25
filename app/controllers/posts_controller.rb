@@ -23,7 +23,9 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   def index
-    @events = Event.order("starts_at DESC")
+    @upcoming_events = Event.where("starts_at > ?", Time.now + 2.days).order("starts_at DESC")
+    @past_events = Event.where("starts_at < ?", Time.now + 2.days).order("starts_at DESC")
+
     if params[:tag]
       @posts = Post.tagged_with(params[:tag]).order("created_at DESC").limit(10)
       @tag = params[:tag]

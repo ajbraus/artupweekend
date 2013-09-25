@@ -3,7 +3,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @upcoming_events = Event.where("starts_at > ?", Time.now + 2.days)
+    @past_events = Event.where("starts_at <x ?", Time.now + 2.days)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,7 +42,7 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
-    unless @event.organizers.include?(current_user)
+    unless @event.organizers.include?(current_user) || current_user.admin?
       redirect_to root_path, notice: "Oops, here you go!"
     end
   end
