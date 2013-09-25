@@ -18,7 +18,7 @@
   </div>
     <div class="post-content">
       <%= link_to post do %>
-      <strong><%= post.title %></strong>
+        <strong><%= post.title %></strong>
       <% end %>
       <div class="muted medium">
         <%= auto_link(post.short_body) %>
@@ -27,7 +27,7 @@
         <%= post.nice_created_at %>
       </div>            
       <div class="muted pull-right small">
-        <%= post.user.username %>
+        <%= link_to post.user.username, post.user %>
       </div>
     </div>
 </div>
