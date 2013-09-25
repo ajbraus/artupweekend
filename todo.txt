@@ -1,26 +1,23 @@
-
-event_application_recieved template
-add delayed job  
-setup Sendgrid
-add welcome email
-add email contact_us
-
-
-new event button for admins
 autocomplete on users names to set organizer
 jquery dateselect for begins_on
 edit event for organizers
 event begins_on method
 
+add delayed job  
+
+
+
 organizer ->
-  add prize
-  add sponsor
+  DONE add prize
+  DONE add sponsor
+  comments (organizer can destroy)
+  updates -> goes to all guests, teammates, sponsors 
+
   invite to organizer
   invite to mentor
   invite to participants
-  updates -> goes to all guests, teammates, sponsors 
-  comments (organizer can destroy)
-
+  
+  
 add DC event for Brian
 
 Access to materials if current_user.teammate?

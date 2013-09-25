@@ -9,6 +9,20 @@
           </p>
           Artup Weekend is a weekend-long art create-a-thon
         </div>
+        <div class="pull-left">
+          <h3>Upcomming Events</h3>
+          <% @events.each do |event| %>
+            <div class="small">
+              <%= link_to event_path(event) do %>
+                <%= event.name %> 
+              <% end %>
+                - <%= event.date_range %></a>
+            </div>
+          <% end %>
+          <div class='pull-left'>
+            <%= link_to "Host Your Own Artup Weekend", new_event_application_path, class:"btn btn-primary" %>
+          </div>
+        </div>
       </div>
       <div class="social-shares">
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="artupweekend" data-size="large" data-hashtags="artupweekend">Tweet</a>
@@ -24,18 +38,16 @@
     <div class="row">
       <div class="col-sm-8">
         <div class="posts-list">
-          <ul class="posts">
-            <% @posts.each do |post| %>
-              <%= render partial: 'post', locals: { :post => post } %>
-            <% end %>
-          </ul>
+          <% @posts.each do |post| %>
+            <%= render partial: 'post', locals: { :post => post } %>
+          <% end %>
         </div>
       </div>
       <div class="col-sm-4">         
         <div id="tag_cloud">
           <h3>Tags</h3>
           <% tag_cloud Post.tag_counts, %w[l] do |tag, css_class| %>
-            <%= link_to tag.name, tag_path(tag.name), class: "label" %>
+            <%= link_to tag.name, tag_path(tag.name), class: "label label-success" %>
           <% end %>
         </div>
         <div class='mc-form'>
@@ -233,22 +245,7 @@
 
           </script>
           <!--End mc_embed_signup-->
-        </div>
-        <div>
-          <%= link_to "Host Your Artup Weekend", new_event_application_path, class:"btn btn-primary" %>
-        </div>     
-        <hr>
-        <div>
-          <h3>Events</h3>
-          <% @events.each do |event| %>
-            <div class="small">
-              <%= link_to event_path(event) do %>
-                <%= event.name %> 
-              <% end %>
-                - <%= event.date_range %></a>
-            </div>
-          <% end %>
-        </div>
+        </div>   
       </div>
     </div>
   </div>
