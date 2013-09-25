@@ -11,8 +11,14 @@ ArtupWeekend::Application.routes.draw do
   
   devise_for :users
 
+  resources :sponsors, only: [:create, :destroy]
+  resources :prizes, only: [:create, :destroy]
+  resources :organizers, only: [:create, :destroy]
+  resources :teammates, only: [:create, :destroy]
+
   resources :users, :only => [:show]
   match 'users/:id' => 'users#show'
+  match '/users_names', :to => 'users#users_names', :as => "users_names"
 
   resources :posts, path: "artitup" do
     resources :comments do

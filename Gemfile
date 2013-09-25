@@ -20,6 +20,9 @@ gem 'acts-as-taggable-on'
 gem 'sendgrid'
 gem 'friendly_id'
 
+gem "paperclip", "~> 3.0"
+gem 'aws-sdk', '~> 1.3.4'
+
 gem "rails_autolink", "~> 1.0.9"
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk', '~> 1.3.4'
@@ -31,16 +34,14 @@ gem 'newrelic_rpm'
 group :development do
 	gem 'pry'
 	gem 'pry-debugger'
-	gem 'pry-remote'
-	gem 'powder'
-	gem 'powify'
 end
 
-# group :development, :test do
-# 	gem 'rspec-rails'
-# 	gem 'turnip'
-# 	gem 'capyabara'
-# end
+group :development, :test do 
+  gem 'faker', '1.0.1'
+  gem 'rspec-rails'
+  gem 'awesome_print'
+  gem 'dotenv-rails'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

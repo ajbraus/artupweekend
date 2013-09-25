@@ -1,10 +1,10 @@
-class VolunteersController < ApplicationController
+class SponsorsController < ApplicationController
   before_filter :authenticate_user!
 
   def create
-    @event = Event.find(params[:volunteer][:event_id])
-    current_user.volunteer!(@event, params[:leader])
-    
+    Sponsor.create(params[:sponsor])
+    @event = Event.find(params[:sponsor][:event_id])
+
     respond_to do |format|
       format.html { redirect_to @event }
       format.js
@@ -12,9 +12,9 @@ class VolunteersController < ApplicationController
   end
 
   def destroy
-    @volunteer = Volunteer.find(params[:id])
-    @event = @volunteer.event
-    @volunteer.destroy
+    @sponsor = Sponsor.find(params[:id])
+    @event = @sponsor.event
+    @sponsor.destroy
 
     respond_to do |format|
       format.html { redirect_to @event }

@@ -15,38 +15,60 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-6">
-			<h4>Organizers</h4>
-			<ul>
-				<% @event.organizers.each do |o| %>
-					<li><%= o.first_name %></li>
+			<p>
+				<h4>Organizers</h4>
+				<ul>
+					<% @event.organizers.each do |o| %>
+						<li><%= o.first_name %></li>
+					<% end %>
+				</ul>
+			</p>
+			<p>
+				<h4>Prizes</h4>
+				<ul>
+					<% @event.prizes.each do |p| %>
+						<li><%= p.title %></li>
+					<% end %>
+				</ul>
+				<div class="clear-both well clearfix">
+					<h5>Add New Prize</h5>
+				<%= form_for @event.prizes.new do |f| %>
+					<p><%= f.text_field :title, placeholder:"Prize" %></p>
+					<p><%= f.hidden_field :event_id, value: @event.id %></p>
+					<hr>
+					<div><%= f.submit class:"btn btn-success pull-right" %></div>
 				<% end %>
-			</ul>
+				</div>
+			</p>
 		</div>
 		<div class="col-sm-6">
 			<h4>Sponsors</h4>
-			<ul>
-				<% @event.sponsors.each do |s| %>
-					<li><%= link_to s.name, s.url %></li>
+					<% @event.sponsors.each do |s| %>
+						<div class="sponsor clearfix">
+							<div class="pull-left img">
+								<%= image_tag s.logo.url(:medium), class:"medium-thumbnail img-rounded" %>
+							</div>
+							<div class="pull-left name">
+								<%= s.name %><br>
+								<%= link_to "#{s.url}", s.url, target:"_blank" %>
+							</div>
+						</div>
+					<% end %>
+			<% if current_user.in?(@event.organizers) || current_user.admin? %>
+				<div class="clear-both well clearfix">
+					<h5>Add New Sponsor</h5>
+				<%= form_for @event.sponsors.new do |f| %>
+					<p><%= f.label :logo, "Attach Logo*" %></p>
+					<p><%= f.file_field :logo %></p>
+					<p><%= f.text_field :name, placeholder:"Name" %></p>
+				  <p><%= f.text_field :email, placeholder:"Email (private)" %></p>
+					<p><%= f.text_field :url, placeholder:"Website" %></p>
+					<p><%= f.hidden_field :event_id, value: @event.id %></p>
+					<hr>
+					<div><%= f.submit class:"btn btn-success pull-right" %></div>
 				<% end %>
-			</ul>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-6">
-			<h4>Mentors/Volunteers</h4>
-			<ul>
-				<% @event.teammates.each do |o| %>
-					<li><%= o.first_name %></li>
-				<% end %>
-			</ul>
-		</div>
-		<div class="col-sm-6">
-			<h4>Atteendees</h4>
-			<ul>
-				<% @event.guests.each do |s| %>
-					<li><%= link_to s.name, user_path(s) %></li>
-				<% end %>
-			</ul>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>

@@ -7,7 +7,7 @@ class RsvpsController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to @event }
-      format.js { render template: "rsvps/in" }
+      format.js
     end
   end
 

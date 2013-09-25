@@ -3,4 +3,7 @@ $(document).ready(function() {
     dateFormat: "dd-mm-yy", 
     minDate: new Date()
   });
+  $('.name').autocomplete({
+    source: $('.name').data('autocomplete-source')
+  });
 });
