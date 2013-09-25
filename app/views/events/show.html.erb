@@ -37,8 +37,9 @@
 					<div class="clear-both well clearfix">
 						<h5>Add New Prize</h5>
 					<%= form_for @event.prizes.new do |f| %>
-						<p><%= f.text_field :title, placeholder:"Prize" %></p>
+						<p><%= f.text_field :title, placeholder:"Prize*" %></p>
 						<p><%= f.hidden_field :event_id, value: @event.id %></p>
+						<div>* indicates required field</div>
 						<hr>
 						<div><%= f.submit class:"btn btn-success pull-right" %></div>
 					<% end %>
@@ -63,12 +64,13 @@
 				<div class="clear-both well clearfix">
 					<h5>Add New Sponsor</h5>
 				<%= form_for @event.sponsors.new do |f| %>
-					<p><%= f.label :logo, "Attach Logo*" %></p>
+					<p><%= f.label :logo, "Logo*" %></p>
 					<p><%= f.file_field :logo %></p>
-					<p><%= f.text_field :name, placeholder:"Name" %></p>
-				  <p><%= f.text_field :email, placeholder:"Email (private)" %></p>
-					<p><%= f.text_field :url, placeholder:"Website" %></p>
+					<p><%= f.text_field :name, placeholder:"Name*" %></p>
+				  <p><%= f.text_field :email, placeholder:"Email* (private)" %></p>
+					<p><%= f.text_field :url, placeholder:"Website*" %></p>
 					<p><%= f.hidden_field :event_id, value: @event.id %></p>
+					<div>* indicates required field</div>
 					<hr>
 					<div><%= f.submit class:"btn btn-success pull-right" %></div>
 				<% end %>

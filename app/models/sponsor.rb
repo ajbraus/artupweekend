@@ -14,4 +14,6 @@ class Sponsor < ActiveRecord::Base
   validates :logo,   :attachment_presence => true,
                      :attachment_content_type => { :content_type => [ 'image/png', 'image/jpg', 'image/gif', 'image/jpeg' ] }
 
+  validates :name, :url, :email, :event_id, presence: true
+
 end
