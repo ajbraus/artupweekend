@@ -53,4 +53,8 @@ class User < ActiveRecord::Base
   def volunteer!(event, leader)
     volunteer = self.volunteers.create(event_id: event.id, organizer: leader)
   end
+
+  def is_organizer?
+    return Volunteer.where(organizer: true, teammate_id: self.id).any?
+  end
 end

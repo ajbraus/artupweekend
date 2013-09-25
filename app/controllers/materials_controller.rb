@@ -11,4 +11,8 @@ class MaterialsController < ApplicationController
 
   def day_of
   end
+
+  def loi
+
+  end
 end

@@ -9,8 +9,6 @@ organizer ->
     if does not exist, notfiry
     when registering, check email against all invites, delete invite and add as orgnizer for event
 
-jquery dateselect for begins_on
-
 add delayed job  
 
 Thank you for sponsoring artup weekend email
@@ -43,3 +41,4 @@ DONE Make admin to review event_applications
 
 DONE add sidebar to individual posts
 DONE edit event for organizers
+DONE jquery dateselect for begins_on

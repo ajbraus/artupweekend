@@ -3,4 +3,5 @@ $(document).ready(function() {
     dateFormat: "dd-mm-yy", 
     minDate: new Date()
   });
+  $('#list').affix();
 });

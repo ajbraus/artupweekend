@@ -6,6 +6,7 @@ ArtupWeekend::Application.routes.draw do
   resources :events
   match '/materials', :to => 'materials#index', :as => "materials"
   match '/FAQ', :to => 'materials#faq', :as => "faq"
+  match '/loi', to: 'materials#loi', as: 'loi'
 
   get 'tags/:tag', to: 'posts#index', as: :tag
   
