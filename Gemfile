@@ -30,6 +30,7 @@ gem 'aws-sdk', '~> 1.3.4'
 gem "hike", "~> 1.2.2"
 
 gem 'newrelic_rpm'
+gem 'airbrake'
 
 group :development do
 	gem 'pry'
