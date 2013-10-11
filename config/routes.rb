@@ -3,7 +3,7 @@ ArtupWeekend::Application.routes.draw do
 
   root :to => 'posts#index'
 
-  resources :events
+  resources :events, only: [:show, :update, :new, :edit, :create, :destroy]
   match '/materials', :to => 'materials#index', :as => "materials"
   match '/FAQ', :to => 'materials#faq', :as => "faq"
   match '/loi', to: 'materials#loi', as: 'loi'
