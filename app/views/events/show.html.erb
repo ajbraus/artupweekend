@@ -88,7 +88,9 @@
   		</p>
   	</div>
 		<div class="col-sm-5">
-			<%= raw(youtube_embed(@event.video_url)) if @event.video_url.present? %>
+      <% if @event.video_url.present? %>
+			 <%= raw(youtube_embed(@event.video_url)) if @event.video_url.present? %>
+      <% end %>
 			<p>
 				<h4>Prizes</h4>
 				<table class="table">
