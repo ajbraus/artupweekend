@@ -8,13 +8,11 @@
   				<div class="lead pull-left">
   					<div>Date: <strong><%= @event.start_date %> - <%= @event.end_date %> </strong></div>
   					<div>Venue: <strong><%= @event.location %></strong></div>
-  					<%= link_to "Back Artup Weekend #{@event.slug.titleize}", @event.campaign_url, class:"btn btn-lg btn-info", target: "_blank" if @event.campaign_url.present? %>
   				</div>
-          <% if @event.tickets_url.present? %>
-            <div class="pull-right">
-              <%= link_to "RSVP", @event.tickets_url, class:"btn btn-primary", target:"_blank" %>
-            </div>
-          <% end %>
+          <div class="pull-right">
+            <%= link_to "Donate", @event.campaign_url, class:"btn btn-lg btn-info", target: "_blank" if @event.campaign_url.present? %>
+            <%= link_to "RSVP", @event.tickets_url, class:"btn btn-primary", target:"_blank", if @event.tickets_url.present? %>
+          </div>
         </div>
         <% if user_signed_in? && (@event.organizers.include?(current_user) || current_user.admin?) %>
           <p class="text-right"><%= link_to "edit", edit_event_path(@event) %></p>
