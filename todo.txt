@@ -1,4 +1,6 @@
+redesign weekend page
 add social share buttons to individual art it up posts
+add eventbrite URL
 
 organizer ->
   projects (with picture/video)
