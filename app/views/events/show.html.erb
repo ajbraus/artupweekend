@@ -86,6 +86,10 @@
   		</p>
   	</div>
 		<div class="col-sm-5">
+      <div class="alert">
+        <h3>Welcome</h3>
+        <%= @event.description %>
+      </div>
       <% if @event.video_url.present? %>
 			 <%= raw(youtube_embed(@event.video_url)) if @event.video_url.present? %>
       <% end %>

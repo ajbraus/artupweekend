@@ -1,6 +1,8 @@
 add custome titles and meta tags
 add eventbrite URL
 
+Add a message from the event organizer
+
 complete Access to materials if current_user.organizer?
 Explain the 30% of donations going to Artup on application
 

@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :img_url, :location, :name, :starts_at, :subdomain, :campaign_url, :video_url, :website_url, :tickets_url, :facebook_page_url, :twitter_handle
+  attr_accessible :img_url, :location, :name, :starts_at, :subdomain, :campaign_url, :video_url, :website_url, :tickets_url, :facebook_page_url, :twitter_handle, :description
   
   has_many :rsvps, dependent: :destroy
   has_many :guests, through: :rsvps, source: :guest
