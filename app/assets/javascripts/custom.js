@@ -4,4 +4,5 @@ $(document).ready(function() {
     minDate: new Date()
   });
   $('#list').affix();
+  $('.alert').delay(3000).fadeOut();
 });

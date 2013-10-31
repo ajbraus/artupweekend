@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130925143924) do
+ActiveRecord::Schema.define(:version => 20131031150727) do
 
   create_table "attendees", :force => true do |t|
     t.integer "user_id"
@@ -59,12 +59,15 @@ ActiveRecord::Schema.define(:version => 20130925143924) do
     t.datetime "starts_at"
     t.string   "img_url"
     t.string   "location"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "subdomain"
     t.string   "slug"
     t.string   "campaign_url"
     t.string   "video_url"
+    t.string   "twitter_handle"
+    t.string   "facebook_page_url"
+    t.string   "tickets_url"
   end
 
   add_index "events", ["slug"], :name => "index_events_on_slug", :unique => true

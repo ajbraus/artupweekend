@@ -1,28 +1,43 @@
 
-
-	<div class="row event-image" style="background-image:url(<%= @event.img_url %>);">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4 well event-show-details">
-					<h3><%= @event.name %> </h3>
-					<% if user_signed_in? && (@event.organizers.include?(current_user) || current_user.admin?) %>
-						<%= link_to "edit", edit_event_path(@event) %>
-					<% end %>
-					<div class="lead">
-						<div>Date: <strong><%= @event.start_date %> - <%= @event.end_date %> </strong></div>
-						<div>Venue: <strong><%= @event.location %></strong></div>
-						<%= link_to "Back Artup Weekend #{@event.slug.titleize}", @event.campaign_url, class:"btn btn-large btn-info", target: "_blank" if @event.campaign_url.present? %>
-					</div>
-				</div>
+<div class="row event-image" style="background-image:url(<%= @event.img_url %>);">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 well event-show-details">
+				<h3><%= @event.name %> </h3>
+        <div class="clearfix">
+  				<div class="lead pull-left">
+  					<div>Date: <strong><%= @event.start_date %> - <%= @event.end_date %> </strong></div>
+  					<div>Venue: <strong><%= @event.location %></strong></div>
+  					<%= link_to "Back Artup Weekend #{@event.slug.titleize}", @event.campaign_url, class:"btn btn-lg btn-info", target: "_blank" if @event.campaign_url.present? %>
+  				</div>
+          <% if @event.tickets_url.present? %>
+            <div class="pull-right">
+              <%= link_to "RSVP", @event.tickets_url, class:"btn btn-primary", target:"_blank" %>
+            </div>
+          <% end %>
+        </div>
+        <% if user_signed_in? && (@event.organizers.include?(current_user) || current_user.admin?) %>
+          <p class="text-right"><%= link_to "edit", edit_event_path(@event) %></p>
+        <% end %>
 			</div>
 		</div>
+		<div class="social-shares">
+      <% if @event.twitter_handle.present? %>
+		  <a href="https://twitter.com/share" class="twitter-share-button" data-via="<%= @event.twitter_handle %>" data-size="large" data-hashtags="<%= @event.twitter_handle %>">Tweet</a>
+		  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <% end %>
+      <% if @event.facebook_page_url.present? %>
+			  <div class="fb-like" data-href="<%= @event.facebook_page_url %>" data-send="true" data-width="150" data-show-faces="true"></div>
+      <% end %>
+		</div>
 	</div>
+</div>
 <div class="container">
   <div class="row">
   	<% if user_signed_in? && (@event.organizers.include?(current_user) || current_user.admin?) %>
   	<div class="panel panel-primary margin-top">
   		<div class="panel-heading">
-  		  <h2 class="panel-title">You are an Administrator of this Artup Weekend event</h2>
+  		  <h2 class="panel-title">You are an Administrator of this Artup Weekend event. <%= link_to "Edit ...", edit_event_path(@event) %></h2>
   		</div>
   	</div>
   	<% end %>

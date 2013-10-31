@@ -1,6 +1,8 @@
-redesign weekend page
-add social share buttons to individual art it up posts
+add custome titles and meta tags
 add eventbrite URL
+
+complete Access to materials if current_user.organizer?
+Explain the 30% of donations going to Artup on application
 
 organizer ->
   projects (with picture/video)
@@ -14,19 +16,6 @@ organizer ->
 add delayed job  
 
 Thank you for sponsoring artup weekend email
-
-add DC event for Brian
-
-Access to materials if current_user.organizer?
-
-Create materials for 
-	getting a venue
-	getting sponsors (fundraising)
-  how to do your indiegogo campaign
-	getting artists
-	getting luminaries
-
-Explain the 30% of donations going to Artup on application
 
 paginate posts
 paginate comments

@@ -28,15 +28,26 @@
     <%= f.text_field :video_url %>
   </div>
   <div class="field">
+    <%= f.label :tickets_url, "Tickets/RSVPs Service URL" %><br />
+    <%= f.text_field :tickets_url %>
+  </div>
+  <div class="field">
     <%= f.label :campaign_url, "Indiegogo Project URL" %><br />
     <%= f.text_field :campaign_url %>
+  </div>
+  <div class="field">
+    <%= f.label :facebook_page_url, "Facebook Page URL" %><br />
+    <%= f.text_field :facebook_page_url %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter_handle, "Twitter Handle" %><br />
+    @ <%= f.text_field :twitter_handle %>
   </div>
   <div class="field">
     <%= f.label :location, "Venue" %><br />
     <%= f.text_field :location %>
   </div>
-  <div class="actions text-right">
-    <%= f.submit class:"btn btn-success btn-large" %>
+  <div class="actions">
+    <%= f.submit class:"btn btn-success btn-lg" %>
   </div>
 <% end %>
-</div>
