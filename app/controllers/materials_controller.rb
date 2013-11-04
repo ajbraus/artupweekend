@@ -6,6 +6,9 @@ class MaterialsController < ApplicationController
     @events = Event.order("starts_at DESC")
   end
 
+  def about_us
+  end
+
   def mentors
   end
 

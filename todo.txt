@@ -1,5 +1,17 @@
-add custome titles and meta tags
-add eventbrite URL
+add custom titles and meta tags
+
+add fogginess to social shares
+make sponsors - organizing, platinum, gold, silver
+display sponsors separately
+
+display date bigger
+display schedule of the weekend
+
+add speakers
+
+pull in tweets and instagram pictures
+#artupweekend @artupweekend
+#artupweekenddc @artupweekenddc
 
 Add a message from the event organizer
 
