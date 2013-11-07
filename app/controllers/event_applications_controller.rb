@@ -49,7 +49,7 @@ class EventApplicationsController < ApplicationController
 
     respond_to do |format|
       if @event_application.save
-        Notifier.event_application_recieved(current_user, @event_application).deliver
+        Notifier.event_application_received(current_user, @event_application).deliver
 
         format.html { redirect_to root_path, notice: 'Event application was successfully submitted.' }
         format.json { render json: @event_application, status: :created, location: @event_application }
