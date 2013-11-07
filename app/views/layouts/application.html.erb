@@ -88,7 +88,12 @@
               </span>
             </li>
             <li><span><%= link_to 'New Article', new_post_path, class:'btn btn-warning' %></span></li>
-            <li><%= link_to "#{current_user.username} - #{current_user.karma}", user_path(current_user) %> </li>
+            <li>
+              <%= link_to user_path(current_user) do %> 
+                <%= small_profile_picture(current_user) %>
+                <%= current_user.username %> - <%= current_user.karma %>
+              <% end %>
+            </li>
           <% else %>
             <li><%= link_to "Join", new_registration_path(:user) %></li> 
             <li><%= link_to "Login", new_session_path(:user) %></li>

@@ -157,6 +157,7 @@ font-size: 16px;
 
 .navbar .nav>li>a {
 color: #FF745E;
+padding: 15px 4px;
 }
 
 .background-white {
@@ -399,4 +400,18 @@ top: 52px;
 
 .field {
 	margin-bottom:5px;
+}
+
+
+.small-thumbnail {
+	height: 30px;
+	position: relative;
+	bottom: 4px;
+	margin-right: 4px;
+}
+
+.medium-thumbnail {
+  height:100px;
+  position: relative;
+  bottom:5px;
 }

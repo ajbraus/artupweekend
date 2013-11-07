@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :username, :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :username, :name, :email, :password, :password_confirmation, :remember_me, :avatar
   # attr_accessible :title, :body
   acts_as_voter
   has_karma(:posts, as: :user)
@@ -32,6 +32,23 @@ class User < ActiveRecord::Base
   has_many :commitments, foreign_key: "committed_user_id", dependent: :destroy
   has_many :committed_tos, through: :commitments, source: :commitment
   
+  has_attached_file :avatar,
+         :styles => { 
+            :medium => "300x300",
+            :thumb => "100x100#" 
+            },
+         :convert_options => { 
+            :thumb => '-quality 60 -strip' 
+            },
+         :storage => :s3,
+         :s3_credentials => { :access_key_id => ENV['S3_ACCESS_KEY'], :secret_access_key => ENV['S3_SECRET_KEY'], :bucket => "artupweekend"},
+         :path => "user_avatars/:id/avatar.:extension",
+         :default_url => "https://s3.amazonaws.com/artupweekend/default_avatar.png"
+
+  validates :avatar, # :attachment_presence => true,
+                     :attachment_content_type => { :content_type => [ 'image/png', 'image/jpg', 'image/gif', 'image/jpeg' ] }
+
+
   validates :name, :username, presence: true
   validates :username, uniqueness: true
   validates :email, presence: true, email: true
