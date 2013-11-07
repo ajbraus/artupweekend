@@ -1,7 +1,7 @@
 <div class="container padding-top">
   <div class="row">
     <div class="col-sm-12">
-      <h1><%= profile_picture(@user) %> <%= @user.username %></h1>
+      <h1><% if false %><%= profile_picture(@user) %> <% end %><%= @user.username %></h1>
       <% if @user == current_user %>
         <div class="pull-right">
           <li><%= link_to "Settings", edit_user_registration_path %></li>

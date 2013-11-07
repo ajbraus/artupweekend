@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-10">
-<h2>Art up</h2>
+<h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+<% if false %>
   <div> 
     <%= profile_picture(@user) %> 
   </div>
@@ -13,6 +13,8 @@
     <%= f.label :avatar, "Profile Picture" %><br />
     <%= f.file_field :avatar %>
   </div>
+
+  <% end %>
 
   <div><%= f.label :name, "Name*" %><br>
   <%= f.text_field :name, :autofocus => true %></div>

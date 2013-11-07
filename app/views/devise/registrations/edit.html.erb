@@ -5,7 +5,7 @@
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
       <%= devise_error_messages! %>
-
+<% if false %>
       <div> 
         <%= profile_picture(resource) %> 
       </div>
@@ -14,6 +14,7 @@
         <%= f.label :avatar, "Profile Picture" %><br />
         <%= f.file_field :avatar %>
       </div>
+      <% end %>
 
       <div><%= f.label :email %><br />
       <%= f.email_field :email, :autofocus => true %></div>
