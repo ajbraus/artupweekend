@@ -22,7 +22,7 @@
     <td><%= event_application.contributions %></td>
     <td><%= event_application.heard_of_us %></td>
     <td><%= event_application.goals %></td>
-    <td><%= event_application.user.name %></td>
+    <td><%= link_to event_application.user.name, event_application.user %></td>
     <td><%= link_to 'Show', event_application %></td>
     <td><%= link_to 'Edit', edit_event_application_path(event_application) %></td>
     <td><%= link_to 'Destroy', event_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
