@@ -29,7 +29,7 @@ class EventApplicationsController < ApplicationController
   # GET /event_applications/new
   # GET /event_applications/new.json
   def new
-    @event_application = EventApplication.new
+    @event_application = current_user.event_applications.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,7 +45,7 @@ class EventApplicationsController < ApplicationController
   # POST /event_applications
   # POST /event_applications.json
   def create
-    @event_application = EventApplication.new(params[:event_application])
+    @event_application = current_user.event_applications.new(params[:event_application])
 
     respond_to do |format|
       if @event_application.save

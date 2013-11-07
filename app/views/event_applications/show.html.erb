@@ -1,40 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="jumbotron">
+    <%= @event_application.user.name %>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <p>
+        <b>Where:</b>
+        <%= @event_application.where %>
+      </p>
 
-<p>
-  <b>Where:</b>
-  <%= @event_application.where %>
-</p>
+      <p>
+        <b>Why:</b>
+        <%= @event_application.why %>
+      </p>
 
-<p>
-  <b>Why:</b>
-  <%= @event_application.why %>
-</p>
+      <p>
+        <b>Who:</b>
+        <%= @event_application.who %>
+      </p>
 
-<p>
-  <b>Who:</b>
-  <%= @event_application.who %>
-</p>
+      <p>
+        <b>Contributions:</b>
+        <%= @event_application.contributions %>
+      </p>
 
-<p>
-  <b>Contributions:</b>
-  <%= @event_application.contributions %>
-</p>
+      <p>
+        <b>Heard of us:</b>
+        <%= @event_application.heard_of_us %>
+      </p>
 
-<p>
-  <b>Heard of us:</b>
-  <%= @event_application.heard_of_us %>
-</p>
+      <p>
+        <b>Goals:</b>
+        <%= @event_application.goals %>
+      </p>
 
-<p>
-  <b>Goals:</b>
-  <%= @event_application.goals %>
-</p>
+      <p>
+        <b>User:</b>
+        <%= @event_application.user %>
+      </p>
 
-<p>
-  <b>User:</b>
-  <%= @event_application.user %>
-</p>
-
-
-<%= link_to 'Edit', edit_event_application_path(@event_application) %> |
-<%= link_to 'Back', event_applications_path %>
+      <%= link_to 'Back', event_applications_path %>
+    </div>
+  </div>
+</div>
