@@ -29,9 +29,6 @@ class User < ActiveRecord::Base
   has_many :volunteers, foreign_key: "teammate_id", dependent: :destroy
   has_many :volunteered_events, through: :volunteers, source: :event
 
-  has_many :commitments, foreign_key: "committed_user_id", dependent: :destroy
-  has_many :committed_tos, through: :commitments, source: :commitment
-  
   has_attached_file :avatar,
          :styles => { 
             :medium => "300x300",
