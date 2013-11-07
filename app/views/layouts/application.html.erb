@@ -93,6 +93,9 @@
             <li><%= link_to "Join", new_registration_path(:user) %></li> 
             <li><%= link_to "Login", new_session_path(:user) %></li>
           <% end %>
+          <% if current_user.admin? %>
+            <li><%= link_to "Admin", event_applications_path %></li>
+          <% end %>
           <% if user_signed_in? && (current_user.admin? || current_user.is_organizer?) %>
             <li><%= link_to "Resources", materials_path %></li>
           <% end %>
