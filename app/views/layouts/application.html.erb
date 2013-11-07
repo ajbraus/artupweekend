@@ -90,7 +90,7 @@
             <li><span><%= link_to 'New Article', new_post_path, class:'btn btn-warning' %></span></li>
             <li>
               <%= link_to user_path(current_user) do %> 
-                <% if false %><%= small_profile_picture(current_user) %><% end %>
+                <%= small_profile_picture(current_user) %>
                 <%= current_user.username %> - <%= current_user.karma %>
               <% end %>
             </li>
