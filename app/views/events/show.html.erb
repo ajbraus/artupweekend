@@ -53,7 +53,7 @@
   			<h4>Organizers</h4>
   			<ul>
   				<% @event.organizers.each do |o| %>
-  					<li><%= o.first_name %></li>
+  					<li><%= profile_picture(o) %> <%= o.first_name %></li>
   				<% end %>
   			</ul>
   		</p>
