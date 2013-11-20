@@ -17,7 +17,11 @@ class Event < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   def start_date
-  	self.try(:starts_at).strftime "%b %e"
+  	if starts_at.present?
+      self.starts_at.strftime "%b %e"
+    else
+      "TBD"
+    end
   end
 
   def end_date
@@ -25,6 +29,10 @@ class Event < ActiveRecord::Base
   end
 
   def date_range
-    self.start_date + " - " + self.end_date
+    if starts_at.present?
+      self.start_date + " - " + self.end_date
+    else 
+      "TBD"
+    end
   end
 end
