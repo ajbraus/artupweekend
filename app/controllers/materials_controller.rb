@@ -18,4 +18,7 @@ class MaterialsController < ApplicationController
   def loi
 
   end
+  def services
+    
+  end
 end

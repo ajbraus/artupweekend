@@ -47,3 +47,20 @@ DONE Make admin to review event_applications
 DONE add sidebar to individual posts
 DONE edit event for organizers
 DONE jquery dateselect for begins_on
+
+
+FAQ:
+
+1. Agree that art will be made in one weekend. However, can we do a gallery showing later in the week? etc?
+
+The art is really owned by the teams that make it, so you can suggest to them what to do with it.
+ 
+2. Cannot use event to make money - just want clarity. we wont use it as a fundraiser but we want to make sure its ok to make money to buy drinks/food/gallery space and venue space for the event. Can we pad the budget so that we can purchase supplies? Things that are not used can be donated to our partner organizations after the event. 
+
+Absolutely the goal is to cover costs, but not to take a salary or profit. Let’s plan on having 30% got Artup and then any of the extra of 70% you spend go back to Artup for future Artup Weekends.
+ 
+3. Co-branding is not allowed. - We would like to include potential headliner sponsors to Artup, community partners, and more. Maybe even doing something like Gold level partners, Silver level, etc. Is this ok? Startup Weekend?
+"No Co-branding" just means don’t put the Artup Weekend logo next to anyone else’s logo. Like “brought to you by Miller lite”.
+
+4. Prompt vs. inspiration - we want to give people enough inspiration and direction so that its easy for them to get to work. We also want to be clear enough so that we mitigate confusion. Will it be ok to maybe do themes, maybe having the community input ideas around the themes. 
+Explore inspiring your members with speakers, location, music, and other icebreakers/games/interactions without explicitly declaring an art prompt. If you really think you should do an explicit prompt, then make sure to make it very open thematically and materially. Remember that people can make musicals, theater, photography, anything not just painting, sculpture, etc.

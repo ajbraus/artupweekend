@@ -6,6 +6,7 @@ ArtupWeekend::Application.routes.draw do
   resources :events, only: [:show, :update, :new, :edit, :create, :destroy]
   
   match '/materials', :to => 'materials#index', :as => "materials"
+  match '/bring_artup_to_your_city', :to => 'materials#services', :as => "services"
   match '/FAQ', :to => 'materials#faq', :as => "faq"
   match '/about-us', :to => 'materials#about_us', :as => "about_us"
   match '/loi', to: 'materials#loi', as: 'loi'
